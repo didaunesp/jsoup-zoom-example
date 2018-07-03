@@ -5,27 +5,15 @@
  */
 package jsoupdemo;
 
+import java.util.ArrayList;
 /**
  *
  * @author raduke
  */
 abstract class Loja {
-    /**
-     * Propriedade para armezenar nome do produto
-     */
-    String nome;
-
-    /**
-     *  Propriedade para armazenar preco do produto
-     */
-    String preco;
-    
-    public Loja(){
-        this.nome = nome;
-    }
-    
+    ArrayList<String> Produtos = new ArrayList();
     public abstract void pesquisar();
-    public abstract String buscaPreco();
-    public abstract String buscaNome();
-    public abstract String buscaPrecoNome();
+    public abstract void setPrecoProduto();
+    public abstract void setNomeProduto();
+    public abstract void setPrecoNome();
 }
