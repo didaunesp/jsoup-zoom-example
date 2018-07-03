@@ -5,7 +5,7 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.*;
 import org.jsoup.select.*;
 
-public class MercadoLivre implements Site{
+public class MercadoLivre extends Loja{
 
     @Override
     public void pesquisar() {
@@ -28,6 +28,21 @@ public class MercadoLivre implements Site{
         {
             System.out.print(err.getMessage());
         }
+    }
+    
+    @Override
+    public String buscaPreco() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String buscaNome() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String buscaPrecoNome() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }
