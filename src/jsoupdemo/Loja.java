@@ -6,14 +6,16 @@
 package jsoupdemo;
 
 import java.util.ArrayList;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.*;
+import org.jsoup.select.*;
 /**
  *
  * @author raduke
  */
 abstract class Loja {
-    ArrayList<String> Produtos = new ArrayList();
+    ArrayList<Produto> produtos = new ArrayList();
     public abstract void pesquisar();
-    public abstract void setPrecoProduto();
-    public abstract void setNomeProduto();
-    public abstract void setPrecoNome();
+    public abstract String getPrecoProduto(Element item);
+    public abstract String getNomeProduto(Element item);
 }

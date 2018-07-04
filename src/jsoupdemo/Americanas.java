@@ -30,17 +30,12 @@ public class Americanas extends Loja{
     }
 
     @Override
-    public void setPreco() {
+    public String getPrecoProduto(Element item) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void setNome() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void setPrecoNome() {
+    public String getNomeProduto(Element item) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

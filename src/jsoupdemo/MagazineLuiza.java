@@ -19,15 +19,15 @@ public class MagazineLuiza extends Loja{
             Elements produtos = doc.getElementsByClass("product");
             for(Element item : produtos)
             {
-                this.setNomeProduto();
+                Produto produto = new Produto(this.getNomeProduto(item), this.getPrecoProduto(item));
+                this.produtos.add(produto);
                 //Elements precoOriginal = item.getElementsByClass("originalPrice");
-                this.setPrecoProduto();
-                if (!precoOriginal.isEmpty()) {
+                /*if (!precoOriginal.isEmpty()) {
                     String precoAtual = item.getElementsByClass("price").text();
                     System.out.println(precoOriginal.text() + " " + precoAtual);
                 } else {
                     System.out.println("Produto indisponível");
-                }
+                }*/
             }
         }
         catch(IOException err)
@@ -37,47 +37,17 @@ public class MagazineLuiza extends Loja{
     }
 
     @Override
-    public void setPrecoProduto() {
-        String url = "https://www.magazineluiza.com.br/busca/smartphone";
-        Document doc;
-        try {
-            doc = Jsoup.connect(url).get();
-            Elements produtos = doc.getElementsByClass("product");
-            for(Element item : produtos)
-        {
-            this.preco = item.getElementsByClass("price").text();
-            if(!this.preco.isEmpty()){
-                this.preco = item.getElementsByClass("price").text();;
+    public String getPrecoProduto(Element item) {
+            String preco = item.getElementsByClass("price").text();
+            if(preco.isEmpty()){
+                return preco;
             } else {
-                this.preco = "Produto indisponível";
+                return "Produto indisponível";
             }
-        }
-        } catch (IOException err) {
-            System.out.print(err.getMessage());
-        }
     }
 
     @Override
-    public void setNomeProduto() {
-        String url = "https://www.magazineluiza.com.br/busca/smartphone";
-        
-        try
-        {
-            Document doc = Jsoup.connect(url).get();
-            Elements produtos = doc.getElementsByClass("product");
-            for(Element item : produtos)
-            {
-                this.nome = item.getElementsByClass("productTitle").text();
-            }
-        }
-        catch(IOException err)
-        {
-            System.out.print(err.getMessage());
-        }
-    }
-
-    @Override
-    public void setPrecoNome() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public String getNomeProduto(Element item) {
+        return item.getElementsByClass("productTitle").text();
     }
 }
