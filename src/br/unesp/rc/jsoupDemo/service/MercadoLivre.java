@@ -1,4 +1,4 @@
-package jsoupdemo;
+package br.unesp.rc.jsoupDemo.service;
 
 import java.io.*;
 import org.jsoup.Jsoup;
