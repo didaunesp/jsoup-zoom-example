@@ -17,10 +17,8 @@ public class Americanas extends Loja{
             Elements produtos = doc.getElementsByClass("product-grid-item");
             for(Element item : produtos)
             {
-                String nome = item.getElementsByClass("card-product-name").text();
-                System.out.println(nome);
-                String preco = item.getElementsByClass("card-product-price").text();
-                System.out.println(preco);
+                Produto produto = new Produto(this.getNomeProduto(item), this.getPrecoProduto(item));
+                this.produtos.add(produto);
             }
         }
         catch(IOException err)
@@ -31,11 +29,11 @@ public class Americanas extends Loja{
 
     @Override
     public String getPrecoProduto(Element item) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return item.getElementsByClass("card-product-price").text();
     }
 
     @Override
     public String getNomeProduto(Element item) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       return item.getElementsByClass("card-product-name").text();
     }
 }
