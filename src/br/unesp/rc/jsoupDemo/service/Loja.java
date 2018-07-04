@@ -17,18 +17,13 @@ import org.jsoup.select.*;
 abstract class Loja {
     
     protected String classeProduto;
+    protected String url;
     public ArrayList<Produto> produtos = new ArrayList();
     
-    public void setClasseProduto(String produto){
-        this.classeProduto = produto;
-    }
-    
     public void pesquisar(){
-        String url = "https://www.magazineluiza.com.br/busca/smartphone";
-        
         try
         {
-            Document doc = Jsoup.connect(url).get();
+            Document doc = Jsoup.connect(this.url).get();
             Elements produtos = doc.getElementsByClass(this.classeProduto);
             for(Element item : produtos)
             {
