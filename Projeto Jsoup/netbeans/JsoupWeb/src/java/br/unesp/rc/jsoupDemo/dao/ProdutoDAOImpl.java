@@ -35,9 +35,6 @@ public class ProdutoDAOImpl implements ProdutoDAO{
                 pstm = con.prepareStatement(INSERT_PRECO);
                 pstm.setLong(1, idProduto);
                 pstm.setString(2, produto.preco.getPreco());
-                
-                
-                
                 pstm.setDate(3, (java.sql.Date) produto.preco.getData());
                 
                 con.commit();
