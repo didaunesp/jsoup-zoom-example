@@ -1,11 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.unesp.rc.jsoupDemo.controller.helper;
 
 import br.unesp.rc.jsoupDemo.controller.command.ICommand;
+import br.unesp.rc.jsoupDemo.controller.command.Pesquisar;
 
 public class Helper {
 
@@ -16,10 +12,11 @@ public class Helper {
         ICommand command = null;
 
         switch (cmd) {
-            case "/buscar": {
+            case "/Pesquisar": {
                 System.out.println("Comando criado!");
-                //command = new EfetuarLogin();
+                command = new Pesquisar();
             }
+            break;
             default: {
                 System.out.println("Commando não encontrado!");
             }
@@ -29,4 +26,3 @@ public class Helper {
     }
 
 }
-
