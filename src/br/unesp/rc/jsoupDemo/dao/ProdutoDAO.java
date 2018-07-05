@@ -16,5 +16,9 @@ public interface ProdutoDAO {
             = "INSERT INTO produtos(nome) "
             + "VALUES(?)";
     
+    final String INSERT_PRECO
+            = "INSERT INTO preco(idProduto, preco, data) "
+            + "VALUES(?, ?, ?)";
+    
     public boolean salvar(Produto produto);
 }
