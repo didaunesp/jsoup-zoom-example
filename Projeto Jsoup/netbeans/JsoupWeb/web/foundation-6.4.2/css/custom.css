@@ -1,0 +1,14 @@
+div {    
+    border-style: dotted;    
+    border-width: thin;
+    margin: 0px;
+    padding: 0px;    
+}
+
+a.left {
+    text-align: left;
+}
+
+div.background{
+    background-color: #c0c0c0;
+}
