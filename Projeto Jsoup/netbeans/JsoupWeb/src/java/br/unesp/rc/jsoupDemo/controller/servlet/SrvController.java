@@ -5,10 +5,6 @@
  */
 package br.unesp.rc.jsoupDemo.controller.servlet;
 
-/**
- *
- * @author raduke
- */
 import br.unesp.rc.jsoupDemo.controller.command.ICommand;
 import br.unesp.rc.jsoupDemo.controller.helper.Helper;
 import java.io.IOException;
