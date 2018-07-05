@@ -34,14 +34,11 @@ public class ProdutoDAOImpl implements ProdutoDAO{
                 
                 pstm = con.prepareStatement(INSERT_PRECO);
                 pstm.setLong(1, idProduto);
-                pstm.setString(2, produto.getPreco());
+                pstm.setString(2, produto.preco.getPreco());
                 
-                //OBTEM DATA ATUAL TODO: ENCAPSULAR EM UM HELPER
-                //DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-                Date date = new Date();
-                //String hoje = dateFormat.format(date);
                 
-                pstm.setDate(3, (java.sql.Date) date);
+                
+                pstm.setDate(3, (java.sql.Date) produto.preco.getData());
                 
                 con.commit();
                 b = true;

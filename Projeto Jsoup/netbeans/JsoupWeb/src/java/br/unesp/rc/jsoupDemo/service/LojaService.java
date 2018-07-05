@@ -1,5 +1,6 @@
 package br.unesp.rc.jsoupDemo.service;
 
+import br.unesp.rc.jsoupDemo.model.Preco;
 import br.unesp.rc.jsoupDemo.model.Produto;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -7,7 +8,7 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.*;
 import org.jsoup.select.*;
 
-abstract class Loja {
+abstract class LojaService {
     
     protected String classeProduto;
     protected String url;
@@ -29,6 +30,6 @@ abstract class Loja {
             System.out.print(err.getMessage());
         }
     }
-    public abstract String getPrecoProduto(Element item);
+    public abstract Preco getPrecoProduto(Element item);
     public abstract String getNomeProduto(Element item);
 }

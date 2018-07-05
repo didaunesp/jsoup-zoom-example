@@ -8,11 +8,11 @@ public class JsoupDemo {
         mercliv.pesquisar();
         
         System.out.println("------------------- AMERICANAS --------------------");
-        Americanas amer = new Americanas();
+        AmericanasService amer = new AmericanasService();
         amer.pesquisar();
         
         System.out.println("------------------ MAGAZINELUIZA ------------------");
-        MagazineLuiza magalu = new MagazineLuiza();
+        MagazineLuizaService magalu = new MagazineLuizaService();
         magalu.pesquisar();
     }
     

@@ -1,11 +1,12 @@
 package br.unesp.rc.jsoupDemo.service;
 
+import br.unesp.rc.jsoupDemo.model.Preco;
 import java.io.*;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.*;
 import org.jsoup.select.*;
 
-public class MercadoLivre extends Loja{
+public class MercadoLivre extends LojaService{
 
     @Override
     public void pesquisar() {
@@ -31,7 +32,7 @@ public class MercadoLivre extends Loja{
     }
 
     @Override
-    public String getPrecoProduto(Element item) {
+    public Preco getPrecoProduto(Element item) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

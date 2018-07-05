@@ -7,9 +7,9 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.*;
 import org.jsoup.select.*;
 
-public class MagazineLuiza extends Loja{
+public class MagazineLuizaService extends LojaService{
     
-    public MagazineLuiza(){
+    public MagazineLuizaService(){
         this.classeProduto = "product";
         this.url = "https://www.magazineluiza.com.br/busca/smartphone";
     }

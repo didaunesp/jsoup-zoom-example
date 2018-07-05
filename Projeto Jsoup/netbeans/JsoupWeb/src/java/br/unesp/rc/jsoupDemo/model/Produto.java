@@ -2,14 +2,14 @@ package br.unesp.rc.jsoupDemo.model;
 
 public class Produto {
     private String nome;
-    private String preco;
+    public Preco preco;
     
-    public Produto(String nome, String preco){
+    public Produto(String nome, Preco preco){
         this.setNome(nome);
         this.setPreco(preco);
     }
     
-    public void setPreco(String preco){
+    public void setPreco(Preco preco){
         this.preco = preco;
     }
     
@@ -17,7 +17,7 @@ public class Produto {
         this.nome = nome;
     }
     
-    public String getPreco(){
+    public Preco getPreco(){
         return this.preco;
     }
     
