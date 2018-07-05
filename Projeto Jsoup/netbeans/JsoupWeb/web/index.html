@@ -1,11 +1,329 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html class="no-js" lang="en">
     <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8" />
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Foundation Starter Template</title>
+        <link rel="stylesheet" href="foundation-6.4.2/css/foundation.css" />
+        <link rel="stylesheet" href="foundation-6.4.2/css/foundation.min.css" />
+        <link rel="stylesheet" href="foundation-6.4.2/css/custom.css" />
+
     </head>
-    <body>
-        <div>TODO write content</div>
+    <body>       
+        <!-- TOPO DA PÁGINA-->
+        <div id="topo">
+            <div class="background">
+                <div class="grid-container">
+                    <div class="grid-x grid-margin-x">
+                        <div class="cell small-10 show-for-large show-for-medium">
+                            <!-- CAMPO DE PESQUISA -->
+                            <input type="search" name="search" placeholder="Digite o termo de busca" class="animated-search-form">
+                        </div>
+                        <div class="cell small-2 center">
+                            <!-- BOTÃO E FORM DE ACESSO -->
+                            <p class="right"> <a class="button warning" 
+                                                 data-open="modalLogin" href="#" > Acesso </a> </p>
+
+                            <!-- FORMULÁRIO DE LOGIN -->
+                            <div class="reveal" id="modalLogin" data-reveal>                                                                
+                                <form class="log-in-form" action="EfetuarLogin">
+                                    <h4 class="text-center">Acesso ao Sistema</h4>
+                                    <label>Usuário:
+                                        <input type="text" name="usuario" placeholder="Digite seu usuário">
+                                    </label>
+                                    <label>Senha:
+                                        <input type="password" name="senha" placeholder="Digite sua senha">
+                                    </label>                                    
+                                    <p> <input type="submit" class="button expanded" value="Entrar"> </p>
+                                    <p class="text-center"><a class="blue" href="#">Esqueceu sua senha?</a></p>
+                                </form>
+                            </div>
+
+                        </div>
+                        <div class="heigh100">
+                            &nbsp;
+                        </div>
+                        <div class="cell small-12">
+                            <h2 class="whiteBold">Car Workshop Full Repair</h2>
+                            <p class="whiteBold">Sua Loja de Serviços Automotivos para Rio Claro e Região!</p>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+        <!-- CORPO DA PÁGINA-->
+        <div id="conteudo">
+            <!-- INSERINDO UMA BARRA HORIZONTAL -->
+            <div class="grid-container">
+                <div class="grid-x grid-margin-x">
+                    <div class="cell small-12">
+                        <hr>
+                    </div>
+                </div>
+            </div>
+
+            <!-- INSERINDO O COMPONENT ORBIT -->
+            <div class="grid-container">
+                <div class="grid-x grid-margin-x">
+                    <div class="cell small-12">
+
+                        <div class="orbit" role="region" aria-label="Favorite Text Ever" data-orbit>
+                            <ul class="orbit-container">
+                                <!--
+                                <button class="orbit-previous" aria-label="previous"><span class="show-for-sr">Previous Slide</span>&#9664;</button>
+                                <button class="orbit-next" aria-label="next"><span class="show-for-sr">Next Slide</span>&#9654;</button>
+                                -->
+                                <li class="is-active orbit-slide">
+                                    <div class="docs-example-orbit-slide">
+                                        <div class="grid-x show-for-large show-for-medium">
+                                            <div class="cell medium-6 large-4">
+                                                <img src="images/orbit/customer.png" width="256" height="256" alt="customer"/>
+                                            </div>
+                                            <div class="cell medium-6 large-8">
+                                                Clientes satisfeitos sempre!
+                                            </div>
+                                        </div>
+                                        <p><strong>Cliente.</strong> blá.</p>
+                                    </div>
+                                </li>
+
+                                <li class="orbit-slide">
+                                    <div class="docs-example-orbit-slide">
+                                        <div class="grid-x show-for-large show-for-medium">
+                                            <div class="cell medium-6 large-4">
+                                                <img src="images/orbit/produtos-servicos.png" width="256" height="256" alt="Produtos e serviços"/>
+                                            </div>
+                                            <div class="cell medium-6 large-8">
+                                                Produtos e serviços de qualidade!
+                                            </div>
+                                        </div>
+                                        <p><strong>Produtos e Serviços.</strong> Blá.</p>
+                                    </div>
+                                </li>
+                                <li class="orbit-slide">
+                                    <div class="docs-example-orbit-slide">
+                                        <div class="grid-x show-for-large show-for-medium">
+                                            <div class="cell medium-6 large-4">
+                                                <img src="images/orbit/pagamento.png" width="256" height="256" alt="Pagamento"/>
+                                            </div>
+                                            <div class="cell medium-6 large-8">
+                                                Pagamentos no faciliatado! Aceitamos todos tipos de cartões!
+                                            </div>
+                                        </div>
+                                        <p><strong>Pagamento facilitado.</strong> Blá.</p>
+                                    </div>
+                                </li>
+                                <li class="orbit-slide">
+                                    <div class="docs-example-orbit-slide">
+                                        <div class="grid-x show-for-large show-for-medium">
+                                            <div class="cell medium-6 large-4">
+                                                <img src="images/orbit/promocao.png" width="256" height="256" alt="Promoção"/>
+                                            </div>
+                                            <div class="cell medium-6 large-8">
+                                                Produtos e serviços de qualidade!
+                                            </div>
+                                        </div>
+                                        <p><strong>Promoções.</strong> Blá.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                            <nav class="orbit-bullets">
+                                <button class="is-active" data-slide="0"><span class="show-for-sr">First slide details.</span><span class="show-for-sr">Current Slide</span></button>
+                                <button data-slide="1"><span class="show-for-sr">Second slide details.</span></button>
+                                <button data-slide="2"><span class="show-for-sr">Third slide details.</span></button>
+                                <button data-slide="3"><span class="show-for-sr">Fourth slide details.</span></button>
+                            </nav>
+                        </div>
+
+                    </div>                        
+                </div>
+            </div>
+
+        </div>
+
+        <!-- INSERINDO OS CARDS DE PRODUTOS E SERVIÇOS -->
+        <div class="grid-container">
+            <div class="grid-x grid-margin-x">                
+                <div class="cell medium-3 large-3">
+                    <div class="card">
+                        <div class="card-divider">
+                            <h4>Produtos</h4>
+                        </div>
+                        <img src="images/card/pneu.png" width="256" height="256" alt="Pneus">
+                        <div class="card-section">
+                            <p>Trabalhamos com as melhores marcas de Rio Claro e região.</p>
+                            <p>Clique <a  class="blue" href="#">aqui</a> e confira.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cell medium-3 large-3">
+                    <div class="card">
+                        <div class="card-divider">
+                            <h4>Produtos</h4>
+                        </div>
+                        <img src="images/card/amortecedor.png"  width="256" height="256" alt="Amortecedores">
+                        <div class="card-section">
+                            <p>Temos todas as linha de amortecedores para seu carro.</p>
+                            <p>Clique <a class="blue" href="#">aqui</a> e confira.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cell medium-3 large-3">
+                    <div class="card">
+                        <div class="card-divider">
+                            <h4>Serviços</h4>
+                        </div>
+                        <img src="images/card/mecanicos.png"  width="256" height="256" alt="Profissionais">
+                        <div class="card-section">
+                            <p>Temos os melhores profissionais de Rio Claro para melhor atendê-los.</p>
+                            <p>Clique <a class="blue" href="#">aqui</a> e confira.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cell medium-3 large-3">
+                    <div class="card">
+                        <div class="card-divider">
+                            <h4>Pagamentos</h4>
+                        </div>
+                        <img src="images/card/cartao.png"  width="256" height="256" alt="Pagamento">
+                        <div class="card-section">
+                            <p>Nós aceitamos vários tipos de cartões. Parcelas que cabem no seu bolso!</p>
+                            <p>Clique <a class="blue" href="#">aqui</a>  e confira.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- RODAPÉ DA PÁGINA-->
+        <div id="rodape">
+            <!-- INSERINDO UMA FAIXA CINZA-->
+            <div  class="fundoCinza20px">
+
+            </div>
+
+            <!-- INSERINDO OS CARDS DE ENDEREÇO E CONTATO-->
+            <div  class="fundoPreto">
+                <div class="fundoPreto20px">
+
+                </div>
+                <div class="grid-container">
+                    <div class="grid-x grid-margin-x">
+                        <div class="cell medium-4">
+                            <p class="whiteBold"> Nosso Endereço </p>
+                            <hr>
+                            <p class = "white"> Avenida 24A, no 1515 </p>
+                            <p class = "white"> CEP: 13506-900 </p>
+                            <p class = "white"> Bairro: Bela Vista </p>
+                            <p class = "white"> Rio Claro - SP </p>
+                            <p class = "white"> Cx Postal: 178 </p>                            
+                        </div>
+                        <div class="cell medium-4">
+                            <p class="whiteBold"> Atendimento </p>
+                            <hr>
+                            <!-- INSERINDO O MODAL DE CONTATO-->                                                                          
+                            <p> <a data-open="exampleModal1"> <img src="images/rodape/form.png" width="16" height="16" alt="form"/> Serviço de atendimento ao consumidor </a> </p>
+
+                            <div class="reveal fundoPreto" id="exampleModal1" data-reveal>
+                                <div class="fundoPreto">
+                                    <h2 class="white"> Contato </h2>
+                                    <form action="#">
+                                        <div class="cell small-4">
+                                            <label class="white">Nome completo: *
+                                                <input type="text" placeholder="Digite seu nome completo">
+                                            </label>
+                                        </div>
+                                        <div class="cell small-4">
+                                            <label class="white">E-mail: *
+                                                <input type="email" placeholder="Digite seu e-mail">
+                                            </label>
+                                        </div>
+                                        <div class="cell small-4">
+                                            <label class="white">Mensagem: *
+                                                <textarea placeholder="Digite sua dúvida/sugestão" rows="4"></textarea>
+                                            </label>
+                                        </div>
+                                        <div class="contact-panel-actions">
+                                            <button class="hollow button alert">Cancelar</button> &nbsp;&nbsp;&nbsp;&nbsp;
+                                            <button class="hollow button">Enviar</button>                                        
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <p class = "white"> <img src="images/rodape/phone.png" width="16" height="16" alt="phone"/> (19) 3333-4444 </p>
+                            <p class = "white"> <img src="images/rodape/mobile.png" width="16" height="16" alt="mobile"/> (19) 98888-7777 </p>
+                            <p class = "white"> <img src="images/rodape/email.png" width="16" height="16" alt="email"/> <a href="mailto:sac@cwfullrepair.com">sac@cwfullrepair.com</a> </p>                            
+                        </div>
+                        <div class="cell medium-4">
+                            <p class="whiteBold"> Certificado de Qualidade </p>
+                            <hr>
+                            <img src="images/rodape/quality.png" width="256" height="256" alt="quality"/>
+                        </div>
+                    </div>
+                </div>
+                <!-- INSERINDO O MODAL ANIMADO DE DESENVOLVIMENTO COMO FINAL DE PÁGINA -->
+                <div  class="fundoPreto">
+                    <div class="grid-container">
+                        <div class="grid-x grid-margin-x">
+                            <div class="cell medium-12 align-middle">
+
+                                <p> <a data-toggle="animatedModal10"> Desenvolvimento </a> </p>
+
+                                <div class="reveal" id="animatedModal10" data-reveal data-close-on-click="true" data-animation-in="spin-in" data-animation-out="spin-out">
+                                    <h1>Site desenvolvido por:</h1>
+                                    <p class="lead">Prof. Frank J. Affonso </p>
+                                    <p class="lead">Disciplina Sistemas Orientados a Objetos </p>
+                                    <button class="close-button" data-close aria-label="Close reveal" type="button">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- INSERINDO O PAINEL DE CONTATO FINAL DE PÁGINA-->
+                <div class="contact-panel" id="contact-panel" data-toggler=".is-active">            
+                    <a class="contact-panel-button" data-toggle="contact-panel"> <img src="images/rodape/form.png" width="16" height="16" alt="form"/> &nbsp;&nbsp;&nbsp; Contato </a>
+                    <form action="#">
+                        <div class="cell small-4">
+                            <label>Nome completo: *
+                                <input type="text" placeholder="Digite seu nome completo">
+                            </label>
+                        </div>
+                        <div class="cell small-4">
+                            <label>E-mail: *
+                                <input type="email" placeholder="Digite seu e-mail">
+                            </label>
+                        </div>
+                        <div class="cell small-4">
+                            <label>Mensagem: *
+                                <textarea placeholder="Digite sua dúvida/sugestão" rows="4"></textarea>
+                            </label>
+                        </div>
+                        <div class="contact-panel-actions">
+                            <button class="hollow button alert">Cancelar</button> &nbsp;&nbsp;&nbsp;&nbsp;
+                            <button class="hollow button">Enviar</button>                                        
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+        <script src="foundation-6.4.2/js/app.js"></script>
+        <script src="foundation-6.4.2/js/vendor/jquery.js"></script>
+        <script src="foundation-6.4.2/js/vendor/what-input.js"></script>
+        <script src="foundation-6.4.2/js/vendor/foundation.min.js"></script>
+        <script>
+            $(document).foundation();
+        </script>
+
     </body>
 </html>
