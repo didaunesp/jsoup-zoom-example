@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.unesp.rc.jsoupDemo.dao;
+package br.unesp.rc.jsoupDemo.service;
 
 import br.unesp.rc.jsoupDemo.model.Produto;
 
@@ -11,10 +11,6 @@ import br.unesp.rc.jsoupDemo.model.Produto;
  *
  * @author raduke
  */
-public interface ProdutoDAO {
-    final String INSERT_PRODUTO
-            = "INSERT INTO produtos(nome) "
-            + "VALUES(?)";
-    
-    public boolean salvar(Produto produto);
+public interface ProdutoService {
+    public void salvar(Produto produto);
 }
