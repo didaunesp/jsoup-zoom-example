@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.unesp.rc.jsoupDemo.service;
 
 import br.unesp.rc.jsoupDemo.model.Produto;
@@ -11,10 +6,7 @@ import java.util.ArrayList;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.*;
 import org.jsoup.select.*;
-/**
- *
- * @author raduke
- */
+
 abstract class Loja {
     
     protected String classeProduto;
