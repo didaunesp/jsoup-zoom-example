@@ -13,143 +13,53 @@
     <body>       
         <!-- TOPO DA PÁGINA-->
         <div id="topo">
-            <div class="background">
+            <div class="background fundoPreto">
                 <div class="grid-container">
                     <div class="grid-x grid-margin-x">
-                        <div class="cell small-10 show-for-large show-for-medium">
-                            <!-- CAMPO DE PESQUISA -->
-                            <input type="search" name="search" placeholder="Digite o termo de busca" class="animated-search-form">
+                        <div class="cell small-12">
+                            <h2 class="whiteBold">Projeto Jsoup</h2>
+                            <p class="whiteBold">Ache os melhores preços do mercado!</p>
                         </div>
                         <div class="heigh100">
                             &nbsp;
                         </div>
-                        <div class="cell small-12">
-                            <h2 class="whiteBold">Ache mais barato</h2>
-                            <p class="whiteBold">Procure produtos pelo menor preço!</p>
+                        <div class="cell small-10 show-for-large show-for-medium">
+                            <!-- CAMPO DE PESQUISA -->
+                            <input type="search" name="palavra" placeholder="Digite o termo de busca" class="animated-search-form">
+                        </div>
+                        <div class="heigh100">
+                            &nbsp;
+                        </div>
+                        <div class="cell center">
+                            <form action="Pesquisar">
+                                <p class="left"> <input type="submit" class="button" value="Buscar"> </p>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div> 
         </div>
+
         <!-- CORPO DA PÁGINA-->
         <div id="conteudo">
-            <!-- INSERINDO UMA BARRA HORIZONTAL -->
+            <div class="grid-container">
+                <h1>Seja bem vindo!</h1>
+            </div>
+        </div>
+
+        <!-- DESENVOLVEDORES -->
+        <div  class="fundoPreto">
             <div class="grid-container">
                 <div class="grid-x grid-margin-x">
-                    <div class="cell small-12">
-                        <hr>
+                    <div class="cell medium-12 align-middle">
+                        <p class="lead whiteBold">Desenvolvimento</p>
+                        <p class="whiteBold">Daniel Hikotaka Kikuti</p>
+                        <p class="whiteBold">Guilherme Lopes Ferreira</p>
+                        <p class="whiteBold">Disciplina Sistemas Orientados a Objetos </p>                               
                     </div>
                 </div>
             </div>
         </div>
-
-        <!-- INSERINDO OS CARDS DE PRODUTOS E SERVIÇOS -->
-        <div class="grid-container">
-            <div class="grid-x grid-margin-x">                
-                <div class="cell medium-3 large-3">
-                    <div class="card">
-                        <div class="card-divider">
-                            <h4>Produtos</h4>
-                        </div>
-                        <img src="images/card/pneu.png" width="256" height="256" alt="Pneus">
-                        <div class="card-section">
-                            <p>Trabalhamos com as melhores marcas de Rio Claro e região.</p>
-                            <p>Clique <a  class="blue" href="#">aqui</a> e confira.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="cell medium-3 large-3">
-                    <div class="card">
-                        <div class="card-divider">
-                            <h4>Produtos</h4>
-                        </div>
-                        <img src="images/card/amortecedor.png"  width="256" height="256" alt="Amortecedores">
-                        <div class="card-section">
-                            <p>Temos todas as linha de amortecedores para seu carro.</p>
-                            <p>Clique <a class="blue" href="#">aqui</a> e confira.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="cell medium-3 large-3">
-                    <div class="card">
-                        <div class="card-divider">
-                            <h4>Serviços</h4>
-                        </div>
-                        <img src="images/card/mecanicos.png"  width="256" height="256" alt="Profissionais">
-                        <div class="card-section">
-                            <p>Temos os melhores profissionais de Rio Claro para melhor atendê-los.</p>
-                            <p>Clique <a class="blue" href="#">aqui</a> e confira.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="cell medium-3 large-3">
-                    <div class="card">
-                        <div class="card-divider">
-                            <h4>Pagamentos</h4>
-                        </div>
-                        <img src="images/card/cartao.png"  width="256" height="256" alt="Pagamento">
-                        <div class="card-section">
-                            <p>Nós aceitamos vários tipos de cartões. Parcelas que cabem no seu bolso!</p>
-                            <p>Clique <a class="blue" href="#">aqui</a>  e confira.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- RODAPÉ DA PÁGINA-->
-        <div id="rodape">
-            <!-- INSERINDO UMA FAIXA CINZA-->
-            <div class="fundoCinza20px"></div>
-
-            <!-- INSERINDO OS CARDS DE ENDEREÇO E CONTATO-->
-            <div  class="fundoPreto">
-                <div class="fundoPreto20px">
-
-                </div>
-                <div class="grid-container">
-                    <div class="grid-x grid-margin-x">
-                        <div class="cell medium-4">
-                            <p class="whiteBold"> Nosso Endereço </p>
-                            <hr>
-                            <p class = "white"> Avenida 24A, no 1515 </p>
-                            <p class = "white"> CEP: 13506-900 </p>
-                            <p class = "white"> Bairro: Bela Vista </p>
-                            <p class = "white"> Rio Claro - SP </p>
-                            <p class = "white"> Cx Postal: 178 </p>                            
-                        </div>
-                        <div class="cell medium-4">
-                            <p class="whiteBold"> Atendimento </p>
-                            <hr>
-                            <p class = "white"> <img src="images/rodape/phone.png" width="16" height="16" alt="phone"/> (19) 3333-4444 </p>
-                            <p class = "white"> <img src="images/rodape/mobile.png" width="16" height="16" alt="mobile"/> (19) 98888-7777 </p>
-                            <p class = "white"> <img src="images/rodape/email.png" width="16" height="16" alt="email"/> <a href="mailto:sac@cwfullrepair.com">sac@cwfullrepair.com</a> </p>                            
-                        </div>
-                        <div class="cell medium-4">
-                            <p class="whiteBold"> Certificado de Qualidade </p>
-                            <hr>
-                            <img src="images/rodape/quality.png" width="256" height="256" alt="quality"/>
-                        </div>
-                    </div>
-                </div>
-                <!-- DESENVOLVEDORES -->
-                <div  class="fundoPreto">
-                    <div class="grid-container">
-                        <div class="grid-x grid-margin-x">
-                            <div class="cell medium-12 align-middle">                                       
-                                <p class="lead"> Desenvolvimento: </p>
-                                <p>Daniel Hikotaka Kikuti e Guilherme Lopes Ferreira </p>
-                                <p>Disciplina Sistemas Orientados a Objetos </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
 
         <script src="foundation-6.4.2/js/app.js"></script>
         <script src="foundation-6.4.2/js/vendor/jquery.js"></script>
