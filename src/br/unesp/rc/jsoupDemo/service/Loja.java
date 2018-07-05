@@ -5,6 +5,7 @@
  */
 package br.unesp.rc.jsoupDemo.service;
 
+import br.unesp.rc.jsoupDemo.model.Produto;
 import java.io.IOException;
 import java.util.ArrayList;
 import org.jsoup.Jsoup;
