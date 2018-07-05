@@ -14,6 +14,7 @@ abstract class LojaService {
     
     protected String classeProduto;
     protected String url;
+    protected String loja;
     public ArrayList<Produto> produtos = new ArrayList();
     private ProdutoDAO pdao;
     
@@ -45,4 +46,8 @@ abstract class LojaService {
     }
     public abstract Preco getPrecoProduto(Element item);
     public abstract String getNomeProduto(Element item);
+    
+    public void listaPrecoProdutos(String nome){
+        this.produtos = this.pdao.lista(nome);
+    }
 }
