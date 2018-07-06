@@ -15,11 +15,13 @@ import javax.servlet.http.HttpSession;
  * @author Daniel
  */
 public class Pesquisar implements ICommand{
-
+    public Pesquisar(){
+        
+    }
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         String page = "sistema.jsp";
-        
+        String palavra = request.getParameter("palavra");
         HttpSession session = request.getSession(true);
         return page;
     }

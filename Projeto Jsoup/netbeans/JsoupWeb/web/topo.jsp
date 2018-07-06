@@ -1,4 +1,3 @@
-<jsp:useBean id="busca" scope="session" class="br.unesp.rc.jsoupDemo.model.Produto" />
 
 <div class="background fundoPreto">
     <div class="grid-container">

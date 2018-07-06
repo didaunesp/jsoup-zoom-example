@@ -1,4 +1,3 @@
-<jsp:useBean id="produto" scope="session" class="br.unesp.rc.jsoupDemo.model.Produto" />
 
 <div class="grid-container">
     <div class="grid-x grid-margin-x">
