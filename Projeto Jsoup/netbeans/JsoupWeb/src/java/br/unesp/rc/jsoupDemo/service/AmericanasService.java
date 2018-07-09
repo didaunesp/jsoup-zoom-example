@@ -31,4 +31,9 @@ public class AmericanasService extends LojaService{
     public String getNomeProduto(Element item) {
        return item.getElementsByClass("card-product-name").text();
     }
+
+    @Override
+    public String getImagemProduto(Element item) {
+        return item.getElementsByClass("card-product-picture").attr("src");
+    }
 }

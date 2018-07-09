@@ -2,6 +2,10 @@ package br.unesp.rc.jsoupDemo.controller.helper;
 
 import br.unesp.rc.jsoupDemo.controller.command.ICommand;
 import br.unesp.rc.jsoupDemo.controller.command.Pesquisar;
+import static com.sun.org.apache.xalan.internal.lib.ExsltDatetime.date;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class Helper {
 
