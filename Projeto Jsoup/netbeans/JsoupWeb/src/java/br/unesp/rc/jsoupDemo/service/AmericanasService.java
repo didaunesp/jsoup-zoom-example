@@ -11,8 +11,9 @@ import org.jsoup.select.*;
 public class AmericanasService extends LojaService{
     
     public AmericanasService(){
+        super();
         this.classeProduto = "product-grid-item";
-        this.url = "https://www.americanas.com.br/busca/smartphone";
+        this.url = "https://www.americanas.com.br/busca/";
         this.loja = "Americanas";
     }
 

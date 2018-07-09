@@ -9,7 +9,7 @@ import org.jsoup.select.*;
 public class MercadoLivre extends LojaService{
 
     @Override
-    public void pesquisar() {
+    public void pesquisar(String busca) {
         String url = "https://lista.mercadolivre.com.br/smartphone";
         
         try

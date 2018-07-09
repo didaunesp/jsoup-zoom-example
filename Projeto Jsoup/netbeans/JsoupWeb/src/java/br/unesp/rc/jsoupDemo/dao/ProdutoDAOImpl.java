@@ -42,6 +42,8 @@ public class ProdutoDAOImpl implements ProdutoDAO{
                 b = true;
             } catch (SQLException ex) {
                 System.out.println("Message: " + ex.getMessage());
+                String msg = ex.getMessage();
+                msg = msg;
             }
         }
         return b;

@@ -15,22 +15,22 @@ abstract class LojaService {
     protected String classeProduto;
     protected String url;
     protected String loja;
-    public ArrayList<Produto> produtos = new ArrayList();
+    public ArrayList<Produto> arrayProdutos = new ArrayList();
     private ProdutoDAO pdao;
     
     public LojaService(){
         this.pdao = new ProdutoDAOImpl();
     }
     
-    public void pesquisar() throws Exception{
+    public void pesquisar(String busca) throws Exception{
         try
         {
-            Document doc = Jsoup.connect(this.url).get();
+            Document doc = Jsoup.connect(this.url+busca).get();
             Elements produtos = doc.getElementsByClass(this.classeProduto);
             for(Element item : produtos)
             {
                 Produto produto = new Produto(this.getNomeProduto(item), this.getPrecoProduto(item));
-                this.produtos.add(produto);
+                this.arrayProdutos.add(produto);
                 if(!this.pdao.salvar(produto)){
                  throw new Exception("Erro ao salvar produto");
                 }
@@ -42,12 +42,14 @@ abstract class LojaService {
         }
         catch(Exception err){
             System.out.print(err.getMessage());
+            String msgPesquisar = err.getMessage();
+            msgPesquisar = msgPesquisar;
         }
     }
     public abstract Preco getPrecoProduto(Element item);
     public abstract String getNomeProduto(Element item);
     
     public void listaPrecoProdutos(String nome){
-        this.produtos = this.pdao.lista(nome);
+        this.arrayProdutos = this.pdao.lista(nome);
     }
 }

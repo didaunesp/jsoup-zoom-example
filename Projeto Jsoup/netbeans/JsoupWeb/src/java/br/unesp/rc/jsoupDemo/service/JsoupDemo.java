@@ -9,7 +9,7 @@ public class JsoupDemo {
         
         System.out.println("------------------- AMERICANAS --------------------");
         AmericanasService amer = new AmericanasService();
-        amer.pesquisar();
+        //amer.pesquisar();
         
         //System.out.println("------------------ MAGAZINELUIZA ------------------");
         //MagazineLuizaService magalu = new MagazineLuizaService();

@@ -32,6 +32,8 @@ public class PrecoDAOImpl implements PrecoDAO{
             pstm.executeUpdate();
         } catch (SQLException ex) {
             System.out.println("Message: " + ex.getMessage());
+            String msg2 = ex.getMessage();
+            msg2 = msg2;
         }
     }
     

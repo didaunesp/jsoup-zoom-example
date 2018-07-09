@@ -21,7 +21,8 @@ public class FabricaConexao implements IMySQL {
             Class.forName(DRIVER);
             con = DriverManager.getConnection(URL, USER, PASSWORD);
         } catch (ClassNotFoundException | SQLException ex) {
-            System.out.println("Message: " + ex.getMessage());
+            String msg = ex.getMessage();
+            msg = msg;
         }
 
         return con;

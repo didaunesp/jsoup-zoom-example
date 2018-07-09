@@ -9,7 +9,7 @@ public interface ProdutoDAO {
             + "VALUES(?)";
     
     final String GET_PRODUTO
-            = "SELECT idProduto FROM Produtos "
+            = "SELECT Produtos.idProdutos FROM Produtos "
             + "WHERE nome = ?";
     
     final String LISTA_PRODUTO
