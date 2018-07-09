@@ -3,13 +3,23 @@ package br.unesp.rc.jsoupDemo.model;
 public class Produto {
     private String nome;
     private String imagem;
+    private String linkProduto;
+
+    public String getLinkProduto() {
+        return linkProduto;
+    }
+
+    public void setLinkProduto(String linkProduto) {
+        this.linkProduto = linkProduto;
+    }
 
     public Preco preco;
     
-    public Produto(String nome, Preco preco, String imagem){
+    public Produto(String nome, Preco preco, String imagem, String link){
         this.setNome(nome);
         this.setPreco(preco);
         this.setImagem(imagem);
+        this.setLinkProduto(link);
     }
     
     public void setPreco(Preco preco){

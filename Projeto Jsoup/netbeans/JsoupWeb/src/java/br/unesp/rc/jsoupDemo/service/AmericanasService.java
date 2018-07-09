@@ -36,4 +36,9 @@ public class AmericanasService extends LojaService{
     public String getImagemProduto(Element item) {
         return item.getElementsByClass("card-product-picture").attr("src");
     }
+
+    @Override
+    public String getLinkProduto(Element item) {
+        return "https://www.americanas.com.br" + item.getElementsByClass("card-product-url").attr("href");
+    }
 }

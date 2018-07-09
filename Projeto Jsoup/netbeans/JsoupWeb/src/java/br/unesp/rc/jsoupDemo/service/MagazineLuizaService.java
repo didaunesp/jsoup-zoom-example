@@ -46,4 +46,9 @@ public class MagazineLuizaService extends LojaService{
     public String getImagemProduto(Element item) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    public String getLinkProduto(Element item) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

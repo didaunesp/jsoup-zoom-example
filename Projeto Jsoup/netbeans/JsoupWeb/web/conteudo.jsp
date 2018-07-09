@@ -23,7 +23,7 @@
             <tbody>
                 <tr>
                     <td><img alt="imagem" src=<%= produto.getImagem()%>></td>
-                    <td><%= produto.getNome()%></td>
+                    <td><a href=<%= produto.getLinkProduto()%>><%= produto.getNome()%></a></td>
                     <td><%= produto.preco.getPreco()%></td>
                     <td><%= produto.preco.loja.getNome()%></td>
                 </tr>
