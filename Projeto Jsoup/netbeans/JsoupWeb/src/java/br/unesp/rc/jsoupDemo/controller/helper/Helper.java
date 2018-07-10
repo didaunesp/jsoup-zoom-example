@@ -20,12 +20,13 @@ public class Helper {
             case "/Pesquisar": {
                 System.out.println("Comando criado!");
                 command = new Pesquisar();
+                break;
             }
             case "/Listar": {
                 System.out.println("Comando criado!");
                 command = new Listar();
+                break;
             }
-            break;
             default: {
                 System.out.println("Commando não encontrado!");
             }

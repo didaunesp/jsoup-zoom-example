@@ -79,7 +79,7 @@ public class ProdutoDAOImpl implements ProdutoDAO{
     
     @Override
     public ArrayList<Produto> lista(String nome) throws SQLException, ClassNotFoundException{
-        ArrayList<Produto> produtos = null;
+        ArrayList<Produto> produtos = new ArrayList<Produto>();
         try {
             Connection con = null;
             con = FabricaConexao.getConexao();
@@ -89,7 +89,7 @@ public class ProdutoDAOImpl implements ProdutoDAO{
             ResultSet res = pstm.executeQuery();
                     
             while (res.next()){
-                Loja loja = new Loja(res.getString("nomeLoja"), res.getString("urlLoja"), res.getInt("id"));
+                Loja loja = new Loja(res.getString("nomeLoja"), res.getString("urlLoja"), res.getInt("idLoja"));
                 Preco preco = new Preco(res.getString("preco"), res.getDate("data"), loja, res.getString("url"));
                 Produto produto = new Produto(res.getString("nomeProduto"), preco, res.getString("imagem"));
                 produtos.add(produto);
