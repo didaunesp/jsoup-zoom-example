@@ -28,7 +28,7 @@ abstract class LojaService {
         Elements produtos = doc.getElementsByClass(this.classeProduto);
         for(Element item : produtos)
         {
-            Produto produto = new Produto(this.getNomeProduto(item), this.getPrecoProduto(item), this.getImagemProduto(item), this.getLinkProduto(item));
+            Produto produto = new Produto(this.getNomeProduto(item), this.getPrecoProduto(item), this.getImagemProduto(item));
             this.arrayProdutos.add(produto);
             if(!this.pdao.salvar(produto)){
                 throw new Exception("Erro ao salvar produto");
