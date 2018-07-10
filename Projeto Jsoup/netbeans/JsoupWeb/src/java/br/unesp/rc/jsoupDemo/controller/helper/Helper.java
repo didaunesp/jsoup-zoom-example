@@ -1,6 +1,7 @@
 package br.unesp.rc.jsoupDemo.controller.helper;
 
 import br.unesp.rc.jsoupDemo.controller.command.ICommand;
+import br.unesp.rc.jsoupDemo.controller.command.Listar;
 import br.unesp.rc.jsoupDemo.controller.command.Pesquisar;
 import static com.sun.org.apache.xalan.internal.lib.ExsltDatetime.date;
 import java.text.DateFormat;
@@ -19,6 +20,10 @@ public class Helper {
             case "/Pesquisar": {
                 System.out.println("Comando criado!");
                 command = new Pesquisar();
+            }
+            case "/Listar": {
+                System.out.println("Comando criado!");
+                command = new Listar();
             }
             break;
             default: {
