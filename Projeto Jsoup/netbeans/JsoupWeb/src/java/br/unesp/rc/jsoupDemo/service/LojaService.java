@@ -41,7 +41,7 @@ abstract class LojaService {
     public abstract String getNomeProduto(Element item);
     public abstract String getImagemProduto(Element item);
     
-    public void listaPrecoProdutos(String nome){
+    public void listaPrecoProdutos(String nome) throws SQLException, ClassNotFoundException{
         this.arrayProdutos = this.pdao.lista(nome);
     }
 }

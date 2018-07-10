@@ -8,19 +8,19 @@ public class Preco {
     private String linkProduto;
     public Loja loja;
     
+    public Preco(String preco, Date data, Loja loja, String link){
+        this.preco = preco;
+        this.data = data;
+        this.linkProduto = link;
+        this.loja = loja;
+    }
+    
     public String getLinkProduto() {
         return linkProduto;
     }
 
     public void setLinkProduto(String linkProduto) {
         this.linkProduto = linkProduto;
-    }
-    
-    public Preco(String preco, Date data, Loja loja, String link){
-        this.preco = preco;
-        this.data = data;
-        this.linkProduto = link;
-        this.loja = loja;
     }
     
     public void setLoja(Loja loja){

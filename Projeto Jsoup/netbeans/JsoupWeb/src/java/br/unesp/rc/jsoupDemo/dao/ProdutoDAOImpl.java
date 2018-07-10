@@ -9,7 +9,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Date;
+import java.sql.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -78,23 +78,27 @@ public class ProdutoDAOImpl implements ProdutoDAO{
     }
     
     @Override
-    public ArrayList<Produto> lista(String nome){
+    public ArrayList<Produto> lista(String nome) throws SQLException, ClassNotFoundException{
         ArrayList<Produto> produtos = null;
         try {
             Connection con = null;
+            con = FabricaConexao.getConexao();
             
             pstm = con.prepareStatement(LISTA_PRODUTO);
-                    pstm.setString(1, nome);
-                    ResultSet res = pstm.executeQuery();
+            pstm.setString(1, nome);
+            ResultSet res = pstm.executeQuery();
                     
-                    while (res.next()){
-                        //Loja loja = new Loja(res.getString("nomeLoja"));
-                        //Preco preco = new Preco(res.getString("preco"), res.getDate("data"), loja);
-                        //Produto produto = new Produto(res.getString("nomeProduto"), preco);
-                        //produtos.add(produto);
-                    }
+            while (res.next()){
+                Loja loja = new Loja(res.getString("nomeLoja"), res.getString("urlLoja"), res.getInt("id"));
+                Preco preco = new Preco(res.getString("preco"), res.getDate("data"), loja, res.getString("url"));
+                Produto produto = new Produto(res.getString("nomeProduto"), preco, res.getString("imagem"));
+                produtos.add(produto);
+            }
+            con.close();
         } catch (SQLException ex) {
-            System.out.println("Message: " + ex.getMessage());
+            throw ex;
+        } catch (ClassNotFoundException ex) {
+            throw ex;
         }
         return produtos;
     }
