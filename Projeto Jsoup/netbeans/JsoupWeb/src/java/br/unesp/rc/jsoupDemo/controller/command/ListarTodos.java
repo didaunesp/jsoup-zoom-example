@@ -15,8 +15,8 @@ public class ListarTodos implements ICommand{
     }
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
-        String page = "sistema2.jsp";
-        String palavra = request.getParameter("palavra");
+        String page = "conteudoListaTudo.jsp";
+        String palavra = request.getParameter("prod");
         HttpSession session = request.getSession(true);
         
         AmericanasService as = new AmericanasService();

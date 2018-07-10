@@ -9,6 +9,7 @@
         <url-pattern>/SrvController</url-pattern>
         <url-pattern>/Pesquisar</url-pattern>
         <url-pattern>/Listar</url-pattern>
+        <url-pattern>/ListarTodos</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

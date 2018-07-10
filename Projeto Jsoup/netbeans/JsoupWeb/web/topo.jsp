@@ -17,6 +17,14 @@
                     <input type="search" name="palavra" placeholder="Digite o termo de busca" class="animated-search-form">
                     <p class="left"> <input type="submit" class="button" value="Buscar"> </p>
                 </form>
+                <form action="Listar">
+                    <input type="search" name="produto" placeholder="Digite o produto a ser listado" class="animated-search-form">
+                    <p class="left"> <input type="submit" class="button" value="Listar"> </p>
+                </form>
+                <form action="ListarTudo">
+                    <input type="search" name="prod" placeholder="Digite o produto a ser listado" class="animated-search-form">
+                    <p class="left"> <input type="submit" class="button" value="Listar Tudo"> </p>
+                </form>
             </div>
         </div>
     </div>
