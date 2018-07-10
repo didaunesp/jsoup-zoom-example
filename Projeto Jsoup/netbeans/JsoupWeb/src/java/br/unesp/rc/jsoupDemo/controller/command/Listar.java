@@ -31,8 +31,8 @@ public class Listar implements ICommand{
             as.listaPrecoProdutos(produto);
             magalu.listaPrecoProdutos(produto);
             
-            session.setAttribute("produtoAmericanas", as.arrayProdutos);
-            session.setAttribute("produtoMagalu", magalu.arrayProdutos);
+            session.setAttribute("produtoAmericanas", as);
+            session.setAttribute("produtoMagalu", magalu);
         } catch (Exception ex) {
             session.setAttribute("erro", ex.getMessage());
             page = "erro.jsp";

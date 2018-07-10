@@ -45,14 +45,14 @@
             <tbody>
                  <% for(int i = 0; i < produtoAmericanas.arrayProdutos.size(); i+=1) { %>
                     <tr>
-                        <td><img alt="imagem" src=<%= produtoAmericanas.arrayProdutos.get(i).getImagem() %>)></td>
+                        <td><img alt="imagem" src=<%= produtoAmericanas.arrayProdutos.get(i).getImagem() %>></td>
                         <td>
                             <a color="black" href=<%= produtoAmericanas.arrayProdutos.get(i).preco.getLinkProduto() %>>
                                 <%= produtoAmericanas.arrayProdutos.get(i).getNome() %>
                             </a>
                         </td>
-                        <td><<%= produtoAmericanas.arrayProdutos.get(i).preco.getPreco()%></td>
-                        <td><<%= produtoAmericanas.arrayProdutos.get(i).preco.getData()%></td>
+                        <td><%= produtoAmericanas.arrayProdutos.get(i).preco.getPreco()%></td>
+                        <td><%= produtoAmericanas.arrayProdutos.get(i).preco.getData()%></td>
                         <td>
                             <a href="urlLoja">
                                 <img src="images/americanas.jpg" title=<%= produtoAmericanas.arrayProdutos.get(i).preco.loja.getNome()%>>
@@ -82,14 +82,14 @@
             <tbody>
                  <% for(int i = 0; i < produtoMagalu.arrayProdutos.size(); i+=1) { %>
                     <tr>
-                        <td><img alt="imagem" src=<%= produtoMagalu.arrayProdutos.get(i).getImagem() %>)></td>
+                        <td><img alt="imagem" src=<%= produtoMagalu.arrayProdutos.get(i).getImagem() %>></td>
                         <td>
                             <a color="black" href=<%= produtoMagalu.arrayProdutos.get(i).preco.getLinkProduto() %>>
                                 <%= produtoMagalu.arrayProdutos.get(i).getNome() %>
                             </a>
                         </td>
-                        <td><<%= produtoMagalu.arrayProdutos.get(i).preco.getPreco()%></td>
-                        <td><<%= produtoMagalu.arrayProdutos.get(i).preco.getData()%></td>
+                        <td><%= produtoMagalu.arrayProdutos.get(i).preco.getPreco()%></td>
+                        <td><%= produtoMagalu.arrayProdutos.get(i).preco.getData()%></td>
                         <td>
                             <a href="urlLoja">
                                 <img src="images/magalu.png" title=<%= produtoMagalu.arrayProdutos.get(i).preco.loja.getNome()%>>
