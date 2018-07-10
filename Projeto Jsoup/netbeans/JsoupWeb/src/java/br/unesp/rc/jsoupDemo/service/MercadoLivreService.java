@@ -6,7 +6,7 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.*;
 import org.jsoup.select.*;
 
-public class MercadoLivre extends LojaService{
+public class MercadoLivreService extends LojaService{
 
     @Override
     public void pesquisar(String busca) {
@@ -43,11 +43,6 @@ public class MercadoLivre extends LojaService{
 
     @Override
     public String getImagemProduto(Element item) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public String getLinkProduto(Element item) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

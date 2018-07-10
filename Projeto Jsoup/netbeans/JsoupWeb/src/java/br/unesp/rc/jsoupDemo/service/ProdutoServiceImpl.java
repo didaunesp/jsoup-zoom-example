@@ -2,6 +2,7 @@ package br.unesp.rc.jsoupDemo.service;
 
 import br.unesp.rc.jsoupDemo.model.Produto;
 import br.unesp.rc.jsoupDemo.dao.ProdutoDAOImpl;
+import java.sql.SQLException;
 
 public class ProdutoServiceImpl implements ProdutoService{
     
@@ -12,7 +13,7 @@ public class ProdutoServiceImpl implements ProdutoService{
     }
     
     @Override
-    public void salvar(Produto produto) {
+    public void salvar(Produto produto) throws SQLException{
         this.pdao.salvar(produto);
     }
     
