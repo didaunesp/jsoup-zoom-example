@@ -83,7 +83,7 @@ public class ProdutoDAOImpl implements ProdutoDAO{
         try {
             Connection con = null;
             con = FabricaConexao.getConexao();
-            
+            nome = "%"+nome+"%";
             pstm = con.prepareStatement(LISTA_PRODUTO);
             pstm.setString(1, nome);
             ResultSet res = pstm.executeQuery();
