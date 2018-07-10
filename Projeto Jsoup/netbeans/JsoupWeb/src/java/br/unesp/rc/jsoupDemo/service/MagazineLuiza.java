@@ -7,28 +7,21 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.*;
 import org.jsoup.select.*;
 
-public class MagazineLuiza extends Loja{
-    
-    public MagazineLuiza(){
+public class MagazineLuiza extends Loja {
+
+    public MagazineLuiza() {
         this.classeProduto = "product";
         this.url = "https://www.magazineluiza.com.br/busca/smartphone";
     }
 
     @Override
     public String getPrecoProduto(Element item) {
-            String preco = item.getElementsByClass("price").text();
-            if(preco.isEmpty()){
-                return preco;
-            } else {
-                return "Produto indisponível";
-            }
-            //Elements precoOriginal = item.getElementsByClass("originalPrice");
-                /*if (!precoOriginal.isEmpty()) {
-                    String precoAtual = item.getElementsByClass("price").text();
-                    System.out.println(precoOriginal.text() + " " + precoAtual);
-                } else {
-                    System.out.println("Produto indisponível");
-                }*/
+        String preco = item.getElementsByClass("price").text();
+        if (preco.isEmpty()) {
+            return preco;
+        } else {
+            return "Produto indisponível";
+        }
     }
 
     @Override

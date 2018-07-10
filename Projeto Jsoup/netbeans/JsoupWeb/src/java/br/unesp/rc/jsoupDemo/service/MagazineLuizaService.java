@@ -1,54 +1,52 @@
 package br.unesp.rc.jsoupDemo.service;
 
 import br.unesp.rc.jsoupDemo.model.Preco;
+import br.unesp.rc.jsoupDemo.model.Loja;
 import java.io.*;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.*;
 import org.jsoup.select.*;
 
-public class MagazineLuizaService extends LojaService{
+public class MagazineLuizaService extends LojaService {
 
-    @Override
-    public Preco getPrecoProduto(Element item) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public MagazineLuizaService() {
+        super();
+        this.classeProduto = "product";
+        this.url = "https://www.magazineluiza.com.br/busca/";
+        this.loja = "Magazine Luiza";
     }
 
     @Override
     public String getNomeProduto(Element item) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    /*
-    public MagazineLuizaService(){
-        this.classeProduto = "product";
-        this.url = "https://www.magazineluiza.com.br/busca/smartphone";
+        return item.getElementsByClass("productTitle").text();
     }
 
     @Override
-    public String getPrecoProduto(Element item) {
-            String preco = item.getElementsByClass("price").text();
-            if(preco.isEmpty()){
-                return preco;
+    public Preco getPrecoProduto(Element item) {
+        String preco = item.getElementsByClass("price").text();
+        Date data = new Date();
+        if (preco.isEmpty()) {
+            return new Preco("Produto indisponível", data, new Loja(this.loja));
+        } else {
+            String precoOriginal = item.getElementsByClass("originalPrice").text();
+            if (!precoOriginal.isEmpty()) {
+                return new Preco(precoOriginal + "\n" + preco, data, new Loja(this.loja));
             } else {
-                return "Produto indisponível";
+                return new Preco(preco, data, new Loja(this.loja));
             }
-            //Elements precoOriginal = item.getElementsByClass("originalPrice");
-                if (!precoOriginal.isEmpty()) {
-                    String precoAtual = item.getElementsByClass("price").text();
-                    System.out.println(precoOriginal.text() + " " + precoAtual);
-                } else {
-                    System.out.println("Produto indisponível");
-                }
-    }*/
+        }
+    }
 
     @Override
     public String getImagemProduto(Element item) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return item.getElementsByClass("product-image").attr("data-original");
     }
 
     @Override
     public String getLinkProduto(Element item) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return item.getElementsByClass("product-li").attr("href");
     }
 }
