@@ -17,6 +17,7 @@ abstract class LojaService {
     protected String urlBusca;
     protected String nomeLoja;
     protected String urlLoja;
+    protected int idLoja;
     public ArrayList<Produto> arrayProdutos = new ArrayList();
     private ProdutoDAO pdao;
     

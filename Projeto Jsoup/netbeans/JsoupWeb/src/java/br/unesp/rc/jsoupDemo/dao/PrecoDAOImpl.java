@@ -29,6 +29,8 @@ public class PrecoDAOImpl implements PrecoDAO{
             pstm.setLong(1, idProduto);
             pstm.setString(2, preco.getPreco());
             pstm.setDate(3, preco.getData());
+            pstm.setInt(4, preco.getLoja().getIdLoja());
+            pstm.setString(5, preco.getLinkProduto());
             pstm.executeUpdate();
         } catch (SQLException ex) {
             System.out.println("Message: " + ex.getMessage());

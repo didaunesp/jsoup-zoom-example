@@ -6,7 +6,8 @@ public class Preco {
     private String preco;
     private Date data;
     private String linkProduto;
-
+    public Loja loja;
+    
     public String getLinkProduto() {
         return linkProduto;
     }
@@ -14,7 +15,6 @@ public class Preco {
     public void setLinkProduto(String linkProduto) {
         this.linkProduto = linkProduto;
     }
-    public Loja loja;
     
     public Preco(String preco, Date data, Loja loja, String link){
         this.preco = preco;
