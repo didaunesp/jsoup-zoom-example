@@ -24,7 +24,8 @@ public class Pesquisar implements ICommand{
             
             session.setAttribute("produto", as.arrayProdutos.get(0));
         } catch (Exception ex) {
-            return ex.getMessage();
+            session.setAttribute("erro", ex.getMessage());
+            page = "error.jsp";
         }
         
         return page;
