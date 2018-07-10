@@ -9,14 +9,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-public class Pesquisar implements ICommand{
-    public Pesquisar(){
+public class ListarTodos implements ICommand{
+    public ListarTodos(){
         
     }
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
-        String page = "sistema.jsp";
-        String palavra = request.getParameter("palavra");
+        String page = "conteudoListaTudo.jsp";
+        String palavra = request.getParameter("prod");
         HttpSession session = request.getSession(true);
         
         AmericanasService as = new AmericanasService();
@@ -34,4 +34,5 @@ public class Pesquisar implements ICommand{
         
         return page;
     }
+    
 }
