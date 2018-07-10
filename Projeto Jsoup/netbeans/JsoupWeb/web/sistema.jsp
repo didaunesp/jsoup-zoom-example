@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="foundation-6.4.2/css/foundation.css" />
         <link rel="stylesheet" href="foundation-6.4.2/css/foundation.min.css" />
         <link rel="stylesheet" href="foundation-6.4.2/css/custom.css" />
+        <link rel="stylesheet" href="css/jsoup.css" />
     </head>
     <body>
         <!-- TOPO DA PÁGINA-->
