@@ -38,7 +38,6 @@ abstract class LojaService {
     public abstract Preco getPrecoProduto(Element item);
     public abstract String getNomeProduto(Element item);
     public abstract String getImagemProduto(Element item);
-    public abstract String getLinkProduto(Element item);
     
     public void listaPrecoProdutos(String nome){
         this.arrayProdutos = this.pdao.lista(nome);

@@ -24,13 +24,13 @@
             <tbody>
                 <tr>
                     <td><img alt="imagem" src=<%= produtoAmericanas.getImagem()%>></td>
-                    <td><a href=<%= produtoAmericanas.getLinkProduto()%>><%= produtoAmericanas.getNome()%></a></td>
+                    <td><a href=<%= produtoAmericanas.preco.getLinkProduto()%>><%= produtoAmericanas.getNome()%></a></td>
                     <td><%= produtoAmericanas.preco.getPreco()%></td>
                     <td><%= produtoAmericanas.preco.loja.getNome()%></td>
                 </tr>
                 <tr>
                     <td><img alt="imagem" src=<%= produtoMagalu.getImagem()%>></td>
-                    <td><a href=<%= produtoMagalu.getLinkProduto()%>><%= produtoMagalu.getNome()%></a></td>
+                    <td><a href=<%= produtoMagalu.preco.getLinkProduto()%>><%= produtoMagalu.getNome()%></a></td>
                     <td><%= produtoMagalu.preco.getPreco()%></td>
                     <td><%= produtoMagalu.preco.loja.getNome()%></td>
                 </tr>

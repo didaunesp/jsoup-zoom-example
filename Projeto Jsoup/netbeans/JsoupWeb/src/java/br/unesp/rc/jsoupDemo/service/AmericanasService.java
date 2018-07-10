@@ -20,11 +20,12 @@ public class AmericanasService extends LojaService{
     @Override
     public Preco getPrecoProduto(Element item) {
         String preco = item.getElementsByClass("card-product-price").text();
+        String link = "https://www.americanas.com.br" + item.getElementsByClass("card-product-url").attr("href");
         //OBTEM DATA ATUAL TODO: ENCAPSULAR EM UM HELPER
         //DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         Date data = new Date();
         //String hoje = dateFormat.format(date);
-        return new Preco(preco, data, new Loja(this.loja));
+        return new Preco(preco, data, new Loja(this.loja), link);
     }
 
     @Override
@@ -35,10 +36,5 @@ public class AmericanasService extends LojaService{
     @Override
     public String getImagemProduto(Element item) {
         return item.getElementsByClass("card-product-picture").attr("src");
-    }
-
-    @Override
-    public String getLinkProduto(Element item) {
-        return "https://www.americanas.com.br" + item.getElementsByClass("card-product-url").attr("href");
     }
 }

@@ -5,11 +5,21 @@ import java.util.Date;
 public class Preco {
     private String preco;
     private Date data;
+    private String linkProduto;
+
+    public String getLinkProduto() {
+        return linkProduto;
+    }
+
+    public void setLinkProduto(String linkProduto) {
+        this.linkProduto = linkProduto;
+    }
     public Loja loja;
     
-    public Preco(String preco, Date data, Loja loja){
+    public Preco(String preco, Date data, Loja loja, String link){
         this.preco = preco;
         this.data = data;
+        this.linkProduto = link;
         this.loja = loja;
     }
     
