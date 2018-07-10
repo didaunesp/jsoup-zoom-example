@@ -21,30 +21,29 @@ public class ProdutoDAOImpl implements ProdutoDAO{
         this.pstm = null;
     }
     
+    /**
+     *
+     * @param produto
+     * @return
+     * @throws SQLException
+     */
     @Override
-    public boolean salvar(Produto produto){
+    public boolean salvar(Produto produto) throws SQLException{
         Connection con = null;
         boolean b = false;
         int idProduto = -1;
         
         con = FabricaConexao.getConexao();
         if (con != null) {
-            try {
-                con.setAutoCommit(false);
+            con.setAutoCommit(false);
                 
-                //executa inserção do produto
-                idProduto = this.getOrNew(con, produto);
+            //executa inserção do produto
+            idProduto = this.getOrNew(con, produto);
                 
-                PrecoDAOImpl preDao = new PrecoDAOImpl();
-                preDao.checkAndSave(con, produto.getPreco(), idProduto);
-                
-                con.commit();
-                b = true;
-            } catch (SQLException ex) {
-                System.out.println("Message: " + ex.getMessage());
-                String msg = ex.getMessage();
-                msg = msg;
-            }
+            PrecoDAOImpl preDao = new PrecoDAOImpl();
+            preDao.checkAndSave(con, produto.getPreco(), idProduto);
+            con.commit();
+            b = true;
         }
         return b;
     }
@@ -88,8 +87,8 @@ public class ProdutoDAOImpl implements ProdutoDAO{
                     while (res.next()){
                         Loja loja = new Loja(res.getString("nomeLoja"));
                         Preco preco = new Preco(res.getString("preco"), res.getDate("data"), loja);
-                        Produto produto = new Produto(res.getString("nomeProduto"), preco);
-                        produtos.add(produto);
+                        //Produto produto = new Produto(res.getString("nomeProduto"), preco);
+                        //produtos.add(produto);
                     }
         } catch (SQLException ex) {
             System.out.println("Message: " + ex.getMessage());

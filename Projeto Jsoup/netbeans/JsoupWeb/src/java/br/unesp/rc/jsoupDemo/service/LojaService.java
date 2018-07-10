@@ -5,6 +5,7 @@ import br.unesp.rc.jsoupDemo.dao.ProdutoDAOImpl;
 import br.unesp.rc.jsoupDemo.model.Preco;
 import br.unesp.rc.jsoupDemo.model.Produto;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.*;
@@ -22,28 +23,16 @@ abstract class LojaService {
         this.pdao = new ProdutoDAOImpl();
     }
     
-    public void pesquisar(String busca) throws Exception{
-        try
+    public void pesquisar(String busca) throws Exception, SQLException{
+        Document doc = Jsoup.connect(this.url+busca).get();
+        Elements produtos = doc.getElementsByClass(this.classeProduto);
+        for(Element item : produtos)
         {
-            Document doc = Jsoup.connect(this.url+busca).get();
-            Elements produtos = doc.getElementsByClass(this.classeProduto);
-            for(Element item : produtos)
-            {
-                Produto produto = new Produto(this.getNomeProduto(item), this.getPrecoProduto(item), this.getImagemProduto(item), this.getLinkProduto(item));
-                this.arrayProdutos.add(produto);
-                if(!this.pdao.salvar(produto)){
-                 throw new Exception("Erro ao salvar produto");
-                }
+            Produto produto = new Produto(this.getNomeProduto(item), this.getPrecoProduto(item), this.getImagemProduto(item), this.getLinkProduto(item));
+            this.arrayProdutos.add(produto);
+            if(!this.pdao.salvar(produto)){
+                throw new Exception("Erro ao salvar produto");
             }
-        }
-        catch(IOException err)
-        {
-            System.out.print(err.getMessage());
-        }
-        catch(Exception err){
-            System.out.print(err.getMessage());
-            String msgPesquisar = err.getMessage();
-            msgPesquisar = msgPesquisar;
         }
     }
     public abstract Preco getPrecoProduto(Element item);

@@ -1,6 +1,7 @@
 package br.unesp.rc.jsoupDemo.dao;
 
 import br.unesp.rc.jsoupDemo.model.Produto;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 public interface ProdutoDAO {
@@ -21,6 +22,6 @@ public interface ProdutoDAO {
             + "WHERE Produto.nome LIKE %?% "
             + "ORDER BY preco desc";
     
-    public boolean salvar(Produto produto);
+    public boolean salvar(Produto produto) throws SQLException;
     public ArrayList<Produto> lista(String nome);
 }

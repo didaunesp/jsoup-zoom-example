@@ -29,7 +29,7 @@ public class Pesquisar implements ICommand{
             session.setAttribute("produtoMagalu", magalu.arrayProdutos.get(0));
         } catch (Exception ex) {
             session.setAttribute("erro", ex.getMessage());
-            page = "error.jsp";
+            page = "erro.jsp";
         }
         
         return page;
