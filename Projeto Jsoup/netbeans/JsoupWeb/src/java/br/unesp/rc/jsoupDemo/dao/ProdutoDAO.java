@@ -13,7 +13,8 @@ public interface ProdutoDAO {
             + "WHERE nome = ?";
     
     final String LISTA_PRODUTO
-            = "SELECT Produtos.idProdutos, Produtos.nome as nomeProduto, Preco.preco, Preco.data, Loja.nome as nomeLoja"
+            = "SELECT Produtos.idProdutos, Produtos.nome as nomeProduto, "
+            + "Preco.preco, Preco.data, Loja.nome as nomeLoja"
             + " FROM Produtos "
             + "JOIN Preco ON Produtos.idProduto = Preco.idProduto "
             + "JOIN Loja ON Preco.idLoja = Loja.idLoja "
