@@ -22,6 +22,6 @@ public interface ProdutoDAO {
             + "WHERE Produto.nome LIKE %?% "
             + "ORDER BY preco desc";
     
-    public boolean salvar(Produto produto) throws SQLException;
+    public boolean salvar(Produto produto) throws SQLException, ClassNotFoundException;
     public ArrayList<Produto> lista(String nome);
 }

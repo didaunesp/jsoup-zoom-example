@@ -26,9 +26,10 @@ public class ProdutoDAOImpl implements ProdutoDAO{
      * @param produto
      * @return
      * @throws SQLException
+     * @throws java.lang.ClassNotFoundException
      */
     @Override
-    public boolean salvar(Produto produto) throws SQLException{
+    public boolean salvar(Produto produto) throws SQLException, ClassNotFoundException{
         Connection con = null;
         boolean b = false;
         int idProduto = -1;
@@ -43,6 +44,7 @@ public class ProdutoDAOImpl implements ProdutoDAO{
             PrecoDAOImpl preDao = new PrecoDAOImpl();
             preDao.checkAndSave(con, produto.getPreco(), idProduto);
             con.commit();
+            con.close();
             b = true;
         }
         return b;
