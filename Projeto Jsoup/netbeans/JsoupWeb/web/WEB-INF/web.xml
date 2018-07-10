@@ -8,6 +8,7 @@
         <servlet-name>SrvController</servlet-name>
         <url-pattern>/SrvController</url-pattern>
         <url-pattern>/Pesquisar</url-pattern>
+        <url-pattern>/Listar</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
