@@ -27,15 +27,16 @@ public class MagazineLuizaService extends LojaService {
     @Override
     public Preco getPrecoProduto(Element item) {
         String preco = item.getElementsByClass("price").text();
+        String link = item.getElementsByClass("product-li").attr("href");
         Date data = new Date();
         if (preco.isEmpty()) {
-            return new Preco("Produto indisponível", data, new Loja(this.loja));
+            return new Preco("Produto indisponível", data, new Loja(this.loja), link);
         } else {
             String precoOriginal = item.getElementsByClass("originalPrice").text();
             if (!precoOriginal.isEmpty()) {
-                return new Preco(precoOriginal + "\n" + preco, data, new Loja(this.loja));
+                return new Preco(precoOriginal + "\n" + preco, data, new Loja(this.loja), link);
             } else {
-                return new Preco(preco, data, new Loja(this.loja));
+                return new Preco(preco, data, new Loja(this.loja), link);
             }
         }
     }
@@ -43,10 +44,5 @@ public class MagazineLuizaService extends LojaService {
     @Override
     public String getImagemProduto(Element item) {
         return item.getElementsByClass("product-image").attr("data-original");
-    }
-
-    @Override
-    public String getLinkProduto(Element item) {
-        return item.getElementsByClass("product-li").attr("href");
     }
 }
