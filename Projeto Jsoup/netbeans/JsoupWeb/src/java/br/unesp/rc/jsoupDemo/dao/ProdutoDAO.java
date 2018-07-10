@@ -6,8 +6,8 @@ import java.util.ArrayList;
 
 public interface ProdutoDAO {
     final String INSERT_PRODUTO
-            = "INSERT INTO produtos(nome) "
-            + "VALUES(?)";
+            = "INSERT INTO produtos(nome, imagem) "
+            + "VALUES(?, ?)";
     
     final String GET_PRODUTO
             = "SELECT Produtos.idProdutos FROM Produtos "

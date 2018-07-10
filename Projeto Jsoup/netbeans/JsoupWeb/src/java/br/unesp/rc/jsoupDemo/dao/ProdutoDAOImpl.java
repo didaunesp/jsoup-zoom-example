@@ -67,6 +67,7 @@ public class ProdutoDAOImpl implements ProdutoDAO{
         pstm = con.prepareStatement(INSERT_PRODUTO,
             PreparedStatement.RETURN_GENERATED_KEYS);
         pstm.setString(1, produto.getNome());
+        pstm.setString(2, produto.getImagem());
         pstm.executeUpdate();
                 
         res = pstm.getGeneratedKeys();
