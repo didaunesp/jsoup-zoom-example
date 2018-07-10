@@ -14,8 +14,9 @@ import org.jsoup.select.*;
 abstract class LojaService {
     
     protected String classeProduto;
-    protected String url;
-    protected String loja;
+    protected String urlBusca;
+    protected String nomeLoja;
+    protected String urlLoja;
     public ArrayList<Produto> arrayProdutos = new ArrayList();
     private ProdutoDAO pdao;
     
@@ -24,7 +25,7 @@ abstract class LojaService {
     }
     
     public void pesquisar(String busca) throws Exception, SQLException{
-        Document doc = Jsoup.connect(this.url+busca).get();
+        Document doc = Jsoup.connect(this.urlBusca+busca).get();
         Elements produtos = doc.getElementsByClass(this.classeProduto);
         for(Element item : produtos)
         {

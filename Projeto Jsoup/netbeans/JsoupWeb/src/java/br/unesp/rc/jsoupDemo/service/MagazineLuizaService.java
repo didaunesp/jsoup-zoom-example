@@ -15,8 +15,9 @@ public class MagazineLuizaService extends LojaService {
     public MagazineLuizaService() {
         super();
         this.classeProduto = "product";
-        this.url = "https://www.magazineluiza.com.br/busca/";
-        this.loja = "Magazine Luiza";
+        this.urlBusca = "https://www.magazineluiza.com.br/busca/";
+        this.nomeLoja = "Magazineluiza";
+        this.urlLoja = "https://www.magazineluiza.com.br";
     }
 
     @Override
@@ -27,16 +28,16 @@ public class MagazineLuizaService extends LojaService {
     @Override
     public Preco getPrecoProduto(Element item) {
         String preco = item.getElementsByClass("price").text();
-        String link = item.getElementsByClass("product-li").attr("href");
+        String urlProduto = item.getElementsByClass("product-li").attr("href");
         Date data = new Date();
         if (preco.isEmpty()) {
-            return new Preco("Produto indisponível", data, new Loja(this.loja), link);
+            return new Preco("Produto indisponível", data, new Loja(this.nomeLoja, this.urlLoja), urlProduto);
         } else {
             String precoOriginal = item.getElementsByClass("originalPrice").text();
             if (!precoOriginal.isEmpty()) {
-                return new Preco(precoOriginal + "\n" + preco, data, new Loja(this.loja), link);
+                return new Preco(precoOriginal + "\n" + preco, data, new Loja(this.nomeLoja, this.urlLoja), urlProduto);
             } else {
-                return new Preco(preco, data, new Loja(this.loja), link);
+                return new Preco(preco, data, new Loja(this.nomeLoja, this.urlLoja), urlProduto);
             }
         }
     }

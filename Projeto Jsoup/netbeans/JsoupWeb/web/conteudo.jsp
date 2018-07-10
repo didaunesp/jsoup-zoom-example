@@ -26,13 +26,21 @@
                     <td><img alt="imagem" src=<%= produtoAmericanas.getImagem()%>></td>
                     <td><a href=<%= produtoAmericanas.preco.getLinkProduto()%>><%= produtoAmericanas.getNome()%></a></td>
                     <td><%= produtoAmericanas.preco.getPreco()%></td>
-                    <td><%= produtoAmericanas.preco.loja.getNome()%></td>
+                    <td>
+                        <a href=<%= produtoAmericanas.preco.loja.getUrlLoja()%>>
+                            <img src="images/americanas.jpg" title=<%= produtoAmericanas.preco.loja.getNome()%>>
+                        </a>
+                    </td>
                 </tr>
                 <tr>
                     <td><img alt="imagem" src=<%= produtoMagalu.getImagem()%>></td>
                     <td><a href=<%= produtoMagalu.preco.getLinkProduto()%>><%= produtoMagalu.getNome()%></a></td>
                     <td><%= produtoMagalu.preco.getPreco()%></td>
-                    <td><%= produtoMagalu.preco.loja.getNome()%></td>
+                    <td>
+                        <a href=<%= produtoMagalu.preco.loja.getUrlLoja()%>>
+                            <img src="images/magalu.png" title=<%= produtoMagalu.preco.loja.getNome()%>>
+                        </a>
+                    </td>
                 </tr>
             </tbody>
         </table>

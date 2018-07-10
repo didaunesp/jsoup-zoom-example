@@ -13,19 +13,20 @@ public class AmericanasService extends LojaService{
     public AmericanasService(){
         super();
         this.classeProduto = "product-grid-item";
-        this.url = "https://www.americanas.com.br/busca/";
-        this.loja = "Americanas";
+        this.urlBusca = "https://www.americanas.com.br/busca/";
+        this.nomeLoja = "Americanas";
+        this.urlLoja = "https://www.americanas.com.br";
     }
 
     @Override
     public Preco getPrecoProduto(Element item) {
         String preco = item.getElementsByClass("card-product-price").text();
-        String link = "https://www.americanas.com.br" + item.getElementsByClass("card-product-url").attr("href");
+        String urlProduto = "https://www.americanas.com.br" + item.getElementsByClass("card-product-url").attr("href");
         //OBTEM DATA ATUAL TODO: ENCAPSULAR EM UM HELPER
         //DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         Date data = new Date();
         //String hoje = dateFormat.format(date);
-        return new Preco(preco, data, new Loja(this.loja), link);
+        return new Preco(preco, data, new Loja(this.nomeLoja, this.urlLoja), urlProduto);
     }
 
     @Override
