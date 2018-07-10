@@ -21,7 +21,7 @@
         <!-- CORPO DA PÁGINA -->
         <div id="conteudo">
             <div class="grid-container">
-                <h1>Seja bem vindo!</h1>
+                <h1>Resultados da busca</h1>
                 <form>
                     <table>
                         <thead>
@@ -64,7 +64,7 @@
                                 <td><%= produtoMagalu.arrayProdutos.get(i).preco.getPreco()%></td>
                                 <td>
                                     <a href=<%= produtoMagalu.arrayProdutos.get(i).preco.loja.getUrlLoja()%>>
-                                        <img src="images/americanas.jpg" title=<%= produtoMagalu.arrayProdutos.get(i).preco.loja.getNome()%>>
+                                        <img src="images/magalu.png" title=<%= produtoMagalu.arrayProdutos.get(i).preco.loja.getNome()%>>
                                     </a>
                                 </td>
                             </tr>
