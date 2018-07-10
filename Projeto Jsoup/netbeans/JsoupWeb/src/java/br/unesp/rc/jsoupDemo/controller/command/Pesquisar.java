@@ -2,6 +2,7 @@ package br.unesp.rc.jsoupDemo.controller.command;
 
 import br.unesp.rc.jsoupDemo.model.Produto;
 import br.unesp.rc.jsoupDemo.service.AmericanasService;
+import br.unesp.rc.jsoupDemo.service.MagazineLuizaService;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.http.HttpServletRequest;
@@ -19,10 +20,13 @@ public class Pesquisar implements ICommand{
         HttpSession session = request.getSession(true);
         
         AmericanasService as = new AmericanasService();
+        MagazineLuizaService magalu = new MagazineLuizaService();
         try {
             as.pesquisar(palavra);
+            magalu.pesquisar(palavra);
             
-            session.setAttribute("produto", as.arrayProdutos.get(0));
+            session.setAttribute("produtoAmericanas", as.arrayProdutos.get(0));
+            session.setAttribute("produtoMagalu", magalu.arrayProdutos.get(0));
         } catch (Exception ex) {
             session.setAttribute("erro", ex.getMessage());
             page = "error.jsp";
