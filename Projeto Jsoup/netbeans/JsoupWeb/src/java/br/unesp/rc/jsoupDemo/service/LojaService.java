@@ -26,7 +26,7 @@ abstract class LojaService {
     }
     
     public void pesquisar(String busca) throws Exception, SQLException{
-        Document doc = Jsoup.connect(this.urlBusca+busca).get();
+        Document doc = Jsoup.connect(this.getUrl(busca)).userAgent("Chrome").get();
         Elements produtos = doc.getElementsByClass(this.classeProduto);
         for(Element item : produtos)
         {
@@ -40,6 +40,7 @@ abstract class LojaService {
     public abstract Preco getPrecoProduto(Element item);
     public abstract String getNomeProduto(Element item);
     public abstract String getImagemProduto(Element item);
+    public abstract String getUrl(String busca);
     
     public void listaPrecoProdutos(String nome) throws SQLException, ClassNotFoundException{
         this.arrayProdutos = this.pdao.lista(nome);

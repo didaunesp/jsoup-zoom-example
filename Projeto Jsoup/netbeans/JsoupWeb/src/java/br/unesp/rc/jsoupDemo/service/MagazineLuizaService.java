@@ -48,4 +48,10 @@ public class MagazineLuizaService extends LojaService {
     public String getImagemProduto(Element item) {
         return item.getElementsByClass("product-image").attr("data-original");
     }
+    
+    @Override
+    public String getUrl(String busca)
+    {
+        return this.urlBusca + busca;
+    }
 }
