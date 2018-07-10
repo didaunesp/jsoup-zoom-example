@@ -1,6 +1,5 @@
-<%@page import="java.text.NumberFormat"%>
 <jsp:useBean id="produtoAmericanas" scope="session" class="br.unesp.rc.jsoupDemo.service.AmericanasService" />
-<jsp:useBean id="produtoMagalu" scope="session" class="br.unesp.rc.jsoupDemo.model.Produto" />
+<jsp:useBean id="produtoMagalu" scope="session" class="br.unesp.rc.jsoupDemo.service.MagazineLuizaService" />
 
 <div class="grid-container">
     <div class="grid-x grid-margin-x">
@@ -24,25 +23,11 @@
                 </tr>
             </thead>
             <tbody>               
-                <%
-                int indiceMenorPreco = 0;
-                String valor0 = produtoAmericanas.arrayProdutos.get(0).preco.getPreco().replace("R$", "");
-                valor0 = valor0.replace(",", "");
-                Double menor = Double.parseDouble(valor0.trim());
-                for (int i = 0; i < produtoAmericanas.arrayProdutos.size(); i++){
-                    String valor1 = produtoAmericanas.arrayProdutos.get(i).preco.getPreco().replace("R$", "");
-                    valor1 = valor1.replace(",", "");
-                    Double valor2 = Double.parseDouble(valor1.trim());
-                    if (valor2 < menor) {
-                        menor = valor2;
-                        indiceMenorPreco = i;
-                    }
-                }    
-                %>
+                <% int indiceMenorPreco = produtoAmericanas.pegaMenorPreco(); %>
                 <tr>
                     <td><img alt="imagem" src=<%= produtoAmericanas.arrayProdutos.get(indiceMenorPreco).getImagem() %>></td>
                     <td>
-                        <a color="black" href=<%= produtoAmericanas.arrayProdutos.get(indiceMenorPreco).preco.getLinkProduto() %>>
+                        <a href=<%= produtoAmericanas.arrayProdutos.get(indiceMenorPreco).preco.getLinkProduto() %>>
                             <%= produtoAmericanas.arrayProdutos.get(indiceMenorPreco).getNome() %>
                         </a>
                     </td>
@@ -52,28 +37,23 @@
                             <img src="images/americanas.jpg" title=<%= produtoAmericanas.arrayProdutos.get(indiceMenorPreco).preco.loja.getNome()%>>
                         </a>
                     </td>
-                </tr>               
+                </tr>
+                <% int indiceMenorPreco2 = produtoMagalu.pegaMenorPreco(); %>
                 <tr>
-                    <td><img alt="imagem" src=<%= produtoMagalu.getImagem()%>></td>
-                    <td><a href=<%= produtoMagalu.preco.getLinkProduto()%>><%= produtoMagalu.getNome()%></a></td>
-                    <td><%= produtoMagalu.preco.getPreco()%></td>
+                    <td><img alt="imagem" src=<%= produtoMagalu.arrayProdutos.get(indiceMenorPreco2).getImagem() %>></td>
                     <td>
-                        <a href=<%= produtoMagalu.preco.loja.getUrlLoja()%>>
-                            <img src="images/magalu.png" title=<%= produtoMagalu.preco.loja.getNome()%>>
+                        <a href=<%= produtoMagalu.arrayProdutos.get(indiceMenorPreco2).preco.getLinkProduto() %>>
+                            <%= produtoMagalu.arrayProdutos.get(indiceMenorPreco2).getNome() %>
+                        </a>
+                    </td>
+                    <td><%= produtoMagalu.arrayProdutos.get(indiceMenorPreco2).preco.getPreco() %></td>
+                    <td>
+                        <a href=<%= produtoMagalu.arrayProdutos.get(indiceMenorPreco2).preco.loja.getUrlLoja()%>>
+                            <img src="images/americanas.jpg" title=<%= produtoMagalu.arrayProdutos.get(indiceMenorPreco2).preco.loja.getNome()%>>
                         </a>
                     </td>
                 </tr>
             </tbody>
         </table>
     </form>
-</div>
-
-<script>
-    
-function listaProdutos(){
-    console.log("deu certo");
-}
-
-</script>
-
 </div>

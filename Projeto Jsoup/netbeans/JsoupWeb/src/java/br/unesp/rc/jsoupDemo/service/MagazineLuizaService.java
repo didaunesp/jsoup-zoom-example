@@ -34,13 +34,8 @@ public class MagazineLuizaService extends LojaService {
         Date data = new Date(Calendar.getInstance().getTime().getTime());
         if (preco.isEmpty()) {
             return new Preco("Produto indisponível", data, new Loja(this.nomeLoja, this.urlLoja, this.idLoja), urlProduto);
-        } else {
-            String precoOriginal = item.getElementsByClass("originalPrice").text();
-            if (!precoOriginal.isEmpty()) {
-                return new Preco(precoOriginal + "\n" + preco, data, new Loja(this.nomeLoja, this.urlLoja, this.idLoja), urlProduto);
-            } else {
-                return new Preco(preco, data, new Loja(this.nomeLoja, this.urlLoja, this.idLoja), urlProduto);
-            }
+        } else {            
+            return new Preco(preco, data, new Loja(this.nomeLoja, this.urlLoja, this.idLoja), urlProduto);
         }
     }
 
