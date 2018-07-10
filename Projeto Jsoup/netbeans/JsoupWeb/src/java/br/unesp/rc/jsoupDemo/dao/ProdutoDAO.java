@@ -20,7 +20,7 @@ public interface ProdutoDAO {
             + "JOIN Preco ON Produtos.idProdutos = Preco.idProduto "
             + "JOIN Loja ON Preco.idLoja = Loja.idLoja "
             + "WHERE Produtos.nome LIKE ? "
-            + "ORDER BY data desc "
+            + "ORDER BY data desc, preco asc "
             + "LIMIT 10";
     
     public boolean salvar(Produto produto) throws SQLException, ClassNotFoundException;
