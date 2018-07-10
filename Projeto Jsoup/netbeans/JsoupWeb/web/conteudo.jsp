@@ -49,7 +49,7 @@
                     <td><%= produtoMagalu.arrayProdutos.get(indiceMenorPreco2).preco.getPreco() %></td>
                     <td>
                         <a href=<%= produtoMagalu.arrayProdutos.get(indiceMenorPreco2).preco.loja.getUrlLoja()%>>
-                            <img src="images/americanas.jpg" title=<%= produtoMagalu.arrayProdutos.get(indiceMenorPreco2).preco.loja.getNome()%>>
+                            <img src="images/magalu.png" title=<%= produtoMagalu.arrayProdutos.get(indiceMenorPreco2).preco.loja.getNome()%>>
                         </a>
                     </td>
                 </tr>
