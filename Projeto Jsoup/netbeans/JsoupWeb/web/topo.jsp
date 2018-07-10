@@ -20,7 +20,7 @@
                     <input type="search" name="produto" placeholder="Digite o produto a ser listado" class="animated-search-form">
                     <p class="left"> <input type="submit" class="button" value="Listar"> </p>
                 </form>
-                <form action="ListarTudo">
+                <form action="ListarTodos">
                     <input type="search" name="prod" placeholder="Digite o produto a ser listado" class="animated-search-form">
                     <p class="left"> <input type="submit" class="button" value="Listar Tudo"> </p>
                 </form>

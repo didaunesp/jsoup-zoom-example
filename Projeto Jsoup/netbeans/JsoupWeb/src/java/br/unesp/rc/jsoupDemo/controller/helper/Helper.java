@@ -31,8 +31,8 @@ public class Helper {
             case "/ListarTodos": {
                 System.out.println("Comando criado!");
                 command = new ListarTodos();
+                break;
             }
-            break;
             default: {
                 System.out.println("Commando não encontrado!");
             }
