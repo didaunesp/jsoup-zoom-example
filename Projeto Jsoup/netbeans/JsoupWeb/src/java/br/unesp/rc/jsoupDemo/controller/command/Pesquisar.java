@@ -26,7 +26,7 @@ public class Pesquisar implements ICommand{
             magalu.pesquisar(palavra);
             
             session.setAttribute("produtoAmericanas", as);
-            session.setAttribute("produtoMagalu", magalu.arrayProdutos.get(0));
+            session.setAttribute("produtoMagalu", magalu);
         } catch (Exception ex) {
             session.setAttribute("erro", ex.getMessage());
             page = "erro.jsp";
