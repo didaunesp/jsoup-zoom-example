@@ -36,6 +36,7 @@ abstract class LojaService {
             }
         }
     }
+    
     public abstract Preco getPrecoProduto(Element item);
     public abstract String getNomeProduto(Element item);
     public abstract String getImagemProduto(Element item);
