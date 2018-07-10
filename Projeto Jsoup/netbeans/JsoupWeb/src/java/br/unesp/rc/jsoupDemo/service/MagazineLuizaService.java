@@ -18,6 +18,7 @@ public class MagazineLuizaService extends LojaService {
         this.classeProduto = "product";
         this.urlBusca = "https://www.magazineluiza.com.br/busca/";
         this.nomeLoja = "Magazineluiza";
+        this.idLoja = 1;
         this.urlLoja = "https://www.magazineluiza.com.br";
     }
 
@@ -32,13 +33,13 @@ public class MagazineLuizaService extends LojaService {
         String urlProduto = item.getElementsByClass("product-li").attr("href");
         Date data = new Date(Calendar.getInstance().getTime().getTime());
         if (preco.isEmpty()) {
-            return new Preco("Produto indisponível", data, new Loja(this.nomeLoja, this.urlLoja), urlProduto);
+            return new Preco("Produto indisponível", data, new Loja(this.nomeLoja, this.urlLoja, this.idLoja), urlProduto);
         } else {
             String precoOriginal = item.getElementsByClass("originalPrice").text();
             if (!precoOriginal.isEmpty()) {
-                return new Preco(precoOriginal + "\n" + preco, data, new Loja(this.nomeLoja, this.urlLoja), urlProduto);
+                return new Preco(precoOriginal + "\n" + preco, data, new Loja(this.nomeLoja, this.urlLoja, this.idLoja), urlProduto);
             } else {
-                return new Preco(preco, data, new Loja(this.nomeLoja, this.urlLoja), urlProduto);
+                return new Preco(preco, data, new Loja(this.nomeLoja, this.urlLoja, this.idLoja), urlProduto);
             }
         }
     }
@@ -46,5 +47,11 @@ public class MagazineLuizaService extends LojaService {
     @Override
     public String getImagemProduto(Element item) {
         return item.getElementsByClass("product-image").attr("data-original");
+    }
+    
+    @Override
+    public String getUrl(String busca)
+    {
+        return this.urlBusca + busca;
     }
 }

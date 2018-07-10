@@ -13,7 +13,7 @@ public class ProdutoServiceImpl implements ProdutoService{
     }
     
     @Override
-    public void salvar(Produto produto) throws SQLException{
+    public void salvar(Produto produto) throws SQLException, ClassNotFoundException{
         this.pdao.salvar(produto);
     }
     

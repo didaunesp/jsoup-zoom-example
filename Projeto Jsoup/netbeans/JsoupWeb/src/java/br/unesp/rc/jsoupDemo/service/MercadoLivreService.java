@@ -45,4 +45,9 @@ public class MercadoLivreService extends LojaService{
     public String getImagemProduto(Element item) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    public String getUrl(String busca) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

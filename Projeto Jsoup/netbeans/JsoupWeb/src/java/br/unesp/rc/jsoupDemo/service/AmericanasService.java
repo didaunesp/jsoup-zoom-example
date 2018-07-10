@@ -16,6 +16,7 @@ public class AmericanasService extends LojaService{
         this.classeProduto = "product-grid-item";
         this.urlBusca = "https://www.americanas.com.br/busca/";
         this.nomeLoja = "Americanas";
+        this.idLoja = 2;
         this.urlLoja = "https://www.americanas.com.br";
     }
 
@@ -27,7 +28,7 @@ public class AmericanasService extends LojaService{
         //DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         Date data = new Date(Calendar.getInstance().getTime().getTime());
         //String hoje = dateFormat.format(date);
-        return new Preco(preco, data, new Loja(this.nomeLoja, this.urlLoja), urlProduto);
+        return new Preco(preco, data, new Loja(this.nomeLoja, this.urlLoja, this.idLoja), urlProduto);
     }
 
     @Override
@@ -38,5 +39,12 @@ public class AmericanasService extends LojaService{
     @Override
     public String getImagemProduto(Element item) {
         return item.getElementsByClass("card-product-picture").attr("src");
+    }
+    
+    @Override
+    public String getUrl(String busca)
+    {
+        busca = busca.replace(' ', '-');
+        return this.urlBusca + busca;
     }
 }

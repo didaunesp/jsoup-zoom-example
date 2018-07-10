@@ -16,8 +16,8 @@ import java.sql.SQLException;
  */
 public interface PrecoDAO {
     final String INSERT_PRECO
-        = "INSERT INTO preco(idProduto, preco, data) "
-        + "VALUES(?, ?, ?)";
+        = "INSERT INTO preco(idProduto, preco, data, idLoja, url) "
+        + "VALUES(?, ?, ?, ?, ?)";
     
     final String GET_PRECO
         = "SELECT Preco.* from Preco "
