@@ -22,23 +22,22 @@ import java.util.logging.Logger;
 public class PrecoDAOImpl implements PrecoDAO{
 
     @Override
-    public void salvar(Preco preco, Connection con, int idProduto) {
+    public void salvar(Preco preco, Connection con, int idProduto) throws SQLException{
         try {
             PreparedStatement pstm = null;
             pstm = con.prepareStatement(INSERT_PRECO);
             pstm.setLong(1, idProduto);
             pstm.setString(2, preco.getPreco());
-            pstm.setDate(3, (java.sql.Date) preco.getData());
+            pstm.setDate(3, preco.getData());
             pstm.executeUpdate();
         } catch (SQLException ex) {
             System.out.println("Message: " + ex.getMessage());
-            String msg2 = ex.getMessage();
-            msg2 = msg2;
+            throw ex;
         }
     }
     
     @Override
-    public void checkAndSave(Connection con, Preco preco, int idProduto){
+    public void checkAndSave(Connection con, Preco preco, int idProduto) throws SQLException{
         PreparedStatement pstm = null;
         boolean existe = this.precoExiste(preco, idProduto, con);
         this.salvar(preco, con, idProduto);
@@ -54,7 +53,7 @@ public class PrecoDAOImpl implements PrecoDAO{
             pstm = con.prepareStatement(GET_PRECO);
             pstm.setInt(1, idProduto);
             pstm.setString(2, preco.loja.getNome());
-            pstm.setDate(3, (Date) preco.getData());
+            pstm.setDate(3, preco.getData());
             res = pstm.executeQuery();
             while (res.next()) {
                 idPreco = res.getInt(1);

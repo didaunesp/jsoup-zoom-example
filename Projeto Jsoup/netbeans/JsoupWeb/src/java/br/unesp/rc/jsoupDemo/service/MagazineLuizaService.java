@@ -3,7 +3,8 @@ package br.unesp.rc.jsoupDemo.service;
 import br.unesp.rc.jsoupDemo.model.Preco;
 import br.unesp.rc.jsoupDemo.model.Loja;
 import java.io.*;
-import java.util.Date;
+import java.sql.Date;
+import java.util.Calendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.jsoup.Jsoup;
@@ -29,7 +30,7 @@ public class MagazineLuizaService extends LojaService {
     public Preco getPrecoProduto(Element item) {
         String preco = item.getElementsByClass("price").text();
         String urlProduto = item.getElementsByClass("product-li").attr("href");
-        Date data = new Date();
+        Date data = new Date(Calendar.getInstance().getTime().getTime());
         if (preco.isEmpty()) {
             return new Preco("Produto indisponível", data, new Loja(this.nomeLoja, this.urlLoja), urlProduto);
         } else {

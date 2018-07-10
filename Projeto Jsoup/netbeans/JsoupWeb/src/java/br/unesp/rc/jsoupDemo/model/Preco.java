@@ -1,6 +1,6 @@
 package br.unesp.rc.jsoupDemo.model;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class Preco {
     private String preco;

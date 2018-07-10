@@ -7,6 +7,7 @@ package br.unesp.rc.jsoupDemo.dao;
 
 import br.unesp.rc.jsoupDemo.model.Preco;
 import java.sql.Connection;
+import java.sql.SQLException;
 
 
 /**
@@ -25,7 +26,7 @@ public interface PrecoDAO {
         + "AND loja.Nome = ? "
         + "AND data = ?";
         
-    public void salvar(Preco preco, Connection con, int idProduto);
-    public void checkAndSave(Connection con, Preco preco, int idProduto);
+    public void salvar(Preco preco, Connection con, int idProduto) throws SQLException;
+    public void checkAndSave(Connection con, Preco preco, int idProduto) throws SQLException;
     public boolean precoExiste(Preco preco, int idProduto, Connection con);
 }

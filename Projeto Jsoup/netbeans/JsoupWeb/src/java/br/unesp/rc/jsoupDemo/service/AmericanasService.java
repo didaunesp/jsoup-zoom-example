@@ -3,7 +3,8 @@ package br.unesp.rc.jsoupDemo.service;
 import br.unesp.rc.jsoupDemo.model.Loja;
 import br.unesp.rc.jsoupDemo.model.Preco;
 import java.io.*;
-import java.util.Date;
+import java.sql.Date;
+import java.util.Calendar;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.*;
 import org.jsoup.select.*;
@@ -24,7 +25,7 @@ public class AmericanasService extends LojaService{
         String urlProduto = "https://www.americanas.com.br" + item.getElementsByClass("card-product-url").attr("href");
         //OBTEM DATA ATUAL TODO: ENCAPSULAR EM UM HELPER
         //DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        Date data = new Date();
+        Date data = new Date(Calendar.getInstance().getTime().getTime());
         //String hoje = dateFormat.format(date);
         return new Preco(preco, data, new Loja(this.nomeLoja, this.urlLoja), urlProduto);
     }

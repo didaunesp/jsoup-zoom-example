@@ -85,7 +85,7 @@ public class ProdutoDAOImpl implements ProdutoDAO{
                     ResultSet res = pstm.executeQuery();
                     
                     while (res.next()){
-                        Loja loja = new Loja(res.getString("nomeLoja"));
+                        //Loja loja = new Loja(res.getString("nomeLoja"));
                         //Preco preco = new Preco(res.getString("preco"), res.getDate("data"), loja);
                         //Produto produto = new Produto(res.getString("nomeProduto"), preco);
                         //produtos.add(produto);
